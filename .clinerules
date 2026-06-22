@@ -36,6 +36,23 @@ Este projeto inclui o repositório `claude-seo/` na raiz com skills e agentes de
 4. **Autor**: Byline com nome e OAB em todos os artigos
 5. **Atualização**: Manter conteúdo renovado a cada 90 dias (perde elegibilidade após 6 meses)
 
+## ⚠️ Comandos que TRAVAM (NÃO usar)
+
+Comandos complexos multi-linha SEMPRE travam. Use apenas:
+
+1. **`sed -i 's/old/new/g' arquivo.html`** — simples, um arquivo por vez
+2. **`sed -i 's/old/new/g' *.html dir/*.html`** — múltiplos arquivos SEM `-not -path`
+3. **`grep -rn "pattern" *.html dir/*.html`** — buscas
+4. **`replace_in_file`** — edições SEARCH/REPLACE individuais
+5. **`write_to_file`** — reescrita completa de um arquivo
+
+**NUNCA usar:**
+- `find ... -not -path ... -exec sed ...` (trava)
+- Python heredoc `<< 'PYEOF'` com regex complexa (trava)
+- Python one-liners com aspas aninhadas (trava)
+- Comandos multi-linha com `\` no final (trava) — sempre escrever em uma única linha
+- `zip` com múltiplas flags `-x` (trava)
+
 ## Plan→Act Handoff (Critical)
 
 PLAN MODE usa GLM 5.2 (modelo superior). ACT MODE usa DeepSeek-V4-Flash (modelo inferior).
