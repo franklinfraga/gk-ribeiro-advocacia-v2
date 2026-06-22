@@ -1,0 +1,26 @@
+{
+  "name": "GK Ribeiro Advocacia Trabalhista e Previdenciária",
+  "short_name": "GK Ribeiro",
+  "description": "Advogada trabalhista e previdenciária em São Paulo - SP. Atendimento presencial e online.",
+  "start_url": "https://gkribeiro.adv.br/",
+  "display": "standalone",
+  "background_color": "#083f43",
+  "theme_color": "#083f43",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/logo/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/logo/logo-gk-completa.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "lang": "pt-BR",
+  "scope": "https://gkribeiro.adv.br/"
+}

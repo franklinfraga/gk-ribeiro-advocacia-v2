@@ -1,0 +1,78 @@
+# GK Ribeiro Advocacia — Regras do Projeto
+
+## SEO Context (Claude SEO Integration)
+
+Este projeto inclui o repositório `claude-seo/` na raiz com skills e agentes de SEO. Ao trabalhar em qualquer arquivo HTML, CSS ou JS, SEMPRE considere as melhores práticas de SEO descritas nos SKILL.md.
+
+### Como usar
+
+- `/seo audit <url>` — Auditoria SEO completa (lê `skills/seo-audit/SKILL.md`)
+- `/seo page <url>` — Análise de página específica (lê `skills/seo-page/SKILL.md`)
+- `/seo technical <url>` — Auditoria técnica (lê `skills/seo-technical/SKILL.md`)
+- `/seo content <url>` — Análise E-E-A-T (lê `skills/seo-content/SKILL.md`)
+- `/seo schema <url>` — Schema.org (lê `skills/seo-schema/SKILL.md`)
+- `/seo geo <url>` — GEO / AI Overviews (lê `skills/seo-geo/SKILL.md`)
+- `/seo local <url>` — SEO Local (lê `skills/seo-local/SKILL.md`)
+- `/seo images <url>` — SEO de imagens (lê `skills/seo-images/SKILL.md`)
+- `/seo sitemap <url>` — Sitemap (lê `skills/seo-sitemap/SKILL.md`)
+- `/seo google <cmd> <url>` — Google APIs (lê `skills/seo-google/SKILL.md`)
+- `/seo backlinks <url>` — Backlinks (lê `skills/seo-backlinks/SKILL.md`)
+
+### Regras gerais ao modificar HTML
+
+1. **Meta tags**: Sempre garanta `title` (43-57 chars), `description` (120-155 chars), `canonical`, OG tags, Twitter Cards
+2. **Headings**: Exatamente 1 H1 por página, hierarquia H1→H2→H3, headings em formato de pergunta para melhor citabilidade AI
+3. **Schema JSON-LD**: Article (blog), Service (áreas), LegalService/Organization (home), ContactPage, ProfilePage, FAQPage
+4. **Imagens**: Formato WebP com alt text descritivo, dimensões explícitas (width/height), lazy loading
+5. **Performance**: CSS/JS versionados (`?v=`), preload de assets críticos
+6. **Acessibilidade**: Skip-link, aria-label, aria-current, landmarks semânticos (header, nav, main, article, footer)
+7. **Mobile**: Viewport meta tag, design responsivo
+
+### Regras de conteúdo
+
+1. **Passagens citáveis**: Criar blocos de 134-167 palavras para citação por AI
+2. **FAQs**: Usar `<details>` com perguntas como summary e respostas auto-contidas
+3. **Datas**: Sempre incluir `datePublished` e `dateModified` em artigos
+4. **Autor**: Byline com nome e OAB em todos os artigos
+5. **Atualização**: Manter conteúdo renovado a cada 90 dias (perde elegibilidade após 6 meses)
+
+## Plan→Act Handoff (Critical)
+
+PLAN MODE usa GLM 5.2 (modelo superior). ACT MODE usa DeepSeek-V4-Flash (modelo inferior).
+O plano deve conter instruções TÃO explícitas que qualquer LLM consiga executar sem precisar interpretar ou decidir.
+
+Cada tarefa no plano DEVE incluir:
+
+### Template de tarefa
+
+```
+## Tarefa N: [título da ação]
+
+Arquivo: [caminho completo relativo à raiz do projeto]
+
+SEARCH (conteúdo ATUAL exato — no mínimo 3 linhas de contexto):
+[Trecho do arquivo atual]
+
+REPLACE (conteúdo NOVO exato — já formatado, sem placeholders):
+[Trecho do arquivo depois da edição]
+
+Comando de verificação:
+[Comando shell para confirmar que a edição foi aplicada corretamente]
+```
+
+### Regras obrigatórias:
+
+1. **Nunca** use descrições vagas como "adicione a meta tag X" — forneça o SEARCH/REPLACE exato
+2. **Nunca** use placeholders como `<NOME_DA_PAGINA>` — escreva o valor final
+3. **Sempre** inclua o comando de verificação ao final
+4. **Numere** a ordem de execução (1º, 2º, 3º...)
+5. **Sempre** leia o arquivo atual com `read_file` antes de escrever o SEARCH, para garantir que o bloco corresponda exatamente ao conteúdo real (incluindo formatação automática do editor)
+6. **Múltiplas alterações no mesmo arquivo** devem ser agrupadas em blocos SEARCH/REPLACE únicos — não fracionar em tarefas separadas
+
+### Scripts disponíveis
+
+Scripts Python em `claude-seo/scripts/` podem ser executados via:
+```
+python3 claude-seo/scripts/pagespeed_check.py https://gkribeiro.adv.br --json
+python3 claude-seo/scripts/parse_html.py https://gkribeiro.adv.br
+python3 claude-seo/scripts/fetch_page.py https://gkribeiro.adv.br

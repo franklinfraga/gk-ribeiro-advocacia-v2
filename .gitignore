@@ -1,0 +1,26 @@
+# Arquivos de publicação gerados localmente
+*.zip
+
+# Fotos brutas/originais usadas apenas durante edição
+imagens/
+*.DNG
+
+# Dependências e caches locais
+node_modules/
+.cache/
+.parcel-cache/
+seo-reports/
+
+# Arquivos do sistema/editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Protótipos temporários de logo/layout
+logo-*-opcoes.html
+logo-*-ajustes.html
+logo-ajustes-opcoes.html
+logo-completa-opcoes.html
+logomarca-opcoes.html
+logomarca-final.html
