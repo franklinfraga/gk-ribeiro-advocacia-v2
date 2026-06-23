@@ -2,7 +2,9 @@
 <html lang="pt-BR">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6D54LRFTZN"></script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google.com">
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-6D54LRFTZN"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -29,8 +31,10 @@
     <meta name="theme-color" content="#083f43">
     <link rel="icon" href="../assets/logo/logo-gk-simples.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../assets/logo/apple-touch-icon.png">
-    <link rel="manifest" href="../manifest.json">
-    <link rel="stylesheet" href="../assets/css/styles.css?v=20260622-1">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,500;1,9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,500;1,9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="../assets/css/forge.css?v=20260622-5">
+    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -222,7 +226,6 @@
     </script>
   </head>
   <body>
-    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="../index.html" aria-label="GK Ribeiro Advocacia Trabalhista e Previdenciária">
@@ -451,7 +454,7 @@
           <ul>
             <li><a href="../trabalhista.html">Direito Trabalhista</a></li>
             <li><a href="../previdenciario.html">Direito Previdenciário</a></li>
-            <li><a href="../localizacao.html">Localização</a></li>
+            
             <li><a href="../blog.html">Blog jurídico</a></li>
           </ul>
         </div>
@@ -486,6 +489,6 @@
       });
     })();
     </script>
-    <script src="../assets/js/main.js?v=20260618-7"></script>
+    <script src="../assets/js/forge-compat.js?v=20260622-5"></script>
   </body>
 </html>
