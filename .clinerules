@@ -93,3 +93,130 @@ Scripts Python em `claude-seo/scripts/` podem ser executados via:
 python3 claude-seo/scripts/pagespeed_check.py https://gkribeiro.adv.br --json
 python3 claude-seo/scripts/parse_html.py https://gkribeiro.adv.br
 python3 claude-seo/scripts/fetch_page.py https://gkribeiro.adv.br
+
+## 🏗️ Template para Novas Páginas (v20260623)
+
+Ao criar QUALQUER nova página HTML (blog, bairro, serviço, landing), siga este template EXATO.
+NUNCA invente variações de layout, fonts, cores ou assets.
+
+### <head> obrigatório
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOME_DA_PAGINA | GK Ribeiro Advocacia</title>
+<meta name="description" content="DESCRICAO_DA_PAGINA_120_155_CHARS">
+<link rel="canonical" href="https://gkribeiro.adv.br/NOME_ARQUIVO.html">
+<!-- OG tags (sempre 1200x630, gk-ribeiro-og.webp) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="...">
+<meta property="og:description" content="...">
+<meta property="og:url" content="...">
+<meta property="og:image" content="https://gkribeiro.adv.br/assets/img/gk-ribeiro-og.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="...">
+<meta name="twitter:description" content="...">
+<meta name="twitter:image" content="https://gkribeiro.adv.br/assets/img/gk-ribeiro-og.webp">
+<meta name="theme-color" content="#083f43">
+<link rel="icon" href="PREFIXOassets/logo/logo-gk-simples.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="PREFIXOassets/logo/apple-touch-icon.png">
+<!-- 1 preconnect (APENAS googletagmanager) -->
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<!-- Fontes self-hosted (NUNCA usar Google Fonts CDN) -->
+<link rel="stylesheet" href="PREFIXOassets/css/fonts.css?v=20260623-1">
+<!-- Forge CSS versionado (incrementar ?v= a cada deploy) -->
+<link rel="stylesheet" href="PREFIXOassets/css/forge.css?v=20260623-1">
+<!-- GA4 lazy-load (NUNCA usar defer — usar pageshow) -->
+<script>
+(function(){'use strict';window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.addEventListener('pageshow',function(){var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-6D54LRFTZN';s.async=true;document.head.appendChild(s);s.onload=function(){gtag('js',new Date());gtag('config','G-6D54LRFTZN');};}, {once:true});})();
+</script>
+<!-- Schema JSON-LD (Article para blog, LegalService para áreas, WebPage para raiz) -->
+<script type="application/ld+json">
+{ ... SCHEMA_JSON_LD ... }
+</script>
+</head>
+```
+
+### Prefixos de caminho
+
+| Localização | Prefixo para assets |
+|-------------|-------------------|
+| Raiz (`trabalhista.html`, `contato.html` etc.) | `assets/...` |
+| `blog/` e `bairros/` | `../assets/...` |
+
+### <body>: estrutura Forge obrigatória
+
+1. `<a class="skip-link" href="#main-content">` — primeiro elemento
+2. `<header class="masthead">` com:
+   - Masthead-row: brand (SVG 135x105) + primary-nav (7 links + theme-toggle 🌙 + nav-mobile-toggle ☰)
+   - Masthead-meta: Dra. Greice Kelli Ribeiro · OAB/SP 387.933 · Atendimento presencial e online · São Paulo - SP
+   - Progress-line div
+3. `<main id="main-content">` com:
+   - Hero section (hero-eyebrow, SVG logo 520x165, título, hero-deck, hero-meta, hero-actions)
+   - Chapter layout (chapter-toc sidebar + chapter-body article)
+4. `<footer class="colophon">` 3 colunas: GK / Endereços / Contato
+5. `<a class="floating-whatsapp">` fixo bottom-right
+6. Script inline: theme toggle (🌙/☀), progress line, FAQ toggle, nav mobile, year filler, form cooldown
+
+### Dark Mode — Regras de ouro
+
+- HTML `<span data-theme-label>`: **🌙** (nunca ☾)
+- JS: `label.textContent = next === 'dim' ? '☀' : '🌙'`
+- CSS: `--accent: #083f43` (light) / `--accent: #6ab0b5` (dim)
+- Fundo: `--bg: #f3ebd9` (light) / `--bg: #181410` (dim)
+- Contraste: SEMPRE testar light e dim — texto `--ink` sobre `--bg` com ratio ≥ 4.5:1
+
+### Assets e Performance
+
+| Recurso | Caminho | Cache | Compressão |
+|---------|---------|-------|------------|
+| `fonts.css` | `assets/css/fonts.css?v=DATA` | 1 ano | Brotli + Gzip |
+| `forge.css` | `assets/css/forge.css?v=DATA` | 1 ano | Brotli + Gzip |
+| Fontes woff2 | `assets/fonts/*.woff2` | 1 ano | N/A (já comprimido) |
+| `forge-compat.js` | Páginas com `site-header`/`site-footer` antigo | 1 ano | Brotli + Gzip |
+| Imagens | `assets/img/*.webp` | 1 ano | N/A |
+| HTML | `.html` | 2 horas | Brotli + Gzip |
+
+**Regras de performance:**
+- NUNCA usar `<link>` para fonts.googleapis.com — usar `fonts.css` local
+- NUNCA usar `defer` no GA — usar `pageshow` lazy-load (não bloqueia FCP)
+- NUNCA adicionar preconnect para `fonts.googleapis.com`, `fonts.gstatic.com`, ou `www.google.com`
+- Apenas 1 preconnect: `googletagmanager.com`
+- SEMPRE versionar CSS/JS com `?v=YYYYMMDD-N`
+- Imagens: WebP com width/height explícitos, lazy loading
+
+### Cores do Tema
+
+| Token | Light | Dim |
+|-------|-------|-----|
+| `--bg` | `#f3ebd9` | `#181410` |
+| `--ink` | `#1c1813` | `#e6dec8` |
+| `--accent` | `#083f43` | `#6ab0b5` |
+| `--logo-primary` | `#083f43` | `#7ab8bd` |
+| `--logo-secondary` | `#b9a06a` | `#d4b878` |
+
+### Checklist antes de publicar
+
+- [ ] 1 único H1, hierarquia H1→H2→H3 sem pular níveis
+- [ ] Title 43-57 chars, description 120-155 chars
+- [ ] Canonical aponta para URL correta (absoluta)
+- [ ] OG image 1200x630 (gk-ribeiro-og.webp)
+- [ ] Schema JSON-LD apropriado (Article/LegalService/WebPage)
+- [ ] Fontes via `fonts.css` local (NUNCA Google Fonts CDN)
+- [ ] GA via `pageshow` lazy-load (NUNCA defer)
+- [ ] Preconnect apenas `googletagmanager.com`
+- [ ] CSS versionado `forge.css?v=DATA`
+- [ ] JS versionado se `forge-compat.js` foi modificado
+- [ ] Dark mode 🌙/☀ padronizado em HTML e JS
+- [ ] Prefixos de caminho corretos (raiz vs blog/bairros)
+- [ ] WhatsApp link funcional
+- [ ] Formulário com honeypot anti-spam
+- [ ] Skip-link funcional
+- [ ] Links internos funcionais (sem 404)
+- [ ] "Localização" NÃO aparece na seção "Contato" do footer
