@@ -35,6 +35,8 @@ Este projeto inclui o repositório `claude-seo/` na raiz com skills e agentes de
 3. **Datas**: Sempre incluir `datePublished` e `dateModified` em artigos
 4. **Autor**: Byline com nome e OAB em todos os artigos
 5. **Atualização**: Manter conteúdo renovado a cada 90 dias (perde elegibilidade após 6 meses)
+6. **Tom do blog**: Adaptar para voz da Dra. Greice Kelli Ribeiro — usar 1ª pessoa ("eu acredito", "na minha experiência", "aqui no escritório"), incluir observações da prática jurídica real e finalizar com seção "Quando o apoio de um advogado faz diferença" + call to action do escritório GK Ribeiro (atuação no TRT-2, endereços Zona Leste e Centro, consulta remota)
+7. **Fontes externas**: Se o usuário informar uma URL de fonte, incluí-la de duas formas: (a) link embutido estilizado no texto com `style="color:var(--accent);text-decoration:underline;"` e (b) linha de referência visível `<p class="note" style="font-size:13px;margin-top:4px;">Fonte: <a href="URL" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">NOME_DA_FONTE</a> (URL_VISIVEL)</p>` logo após o parágrafo onde a fonte é mencionada
 
 ## ⚠️ Comandos que TRAVAM (NÃO usar)
 
@@ -52,6 +54,17 @@ Comandos complexos multi-linha SEMPRE travam. Use apenas:
 - Python one-liners com aspas aninhadas (trava)
 - Comandos multi-linha com `\` no final (trava) — sempre escrever em uma única linha
 - `zip` com múltiplas flags `-x` (trava)
+
+## ⚠️ Ferramentas de edição — quando usar cada uma
+
+| Situação | Ferramenta | Por quê |
+|----------|-----------|---------|
+| Criar arquivo novo do zero | `write_to_file` | Seguro para UTF-8, arquivo já precisa ser escrito inteiro |
+| Substituição curta e sem acentos (ex: trocar classe CSS) | `sed` | Rápido, 1 linha, não corrompe encoding |
+| Alteração pontual em linha com acentos | `replace_in_file` com SEARCH block curto (máx 80 chars) e sem acentos no trecho buscado | Não corrompe UTF-8 |
+| Múltiplas alterações na mesma linha com acentos | `write_to_file` (reescrever arquivo inteiro) | Única forma segura de preservar acentos |
+
+**Regra de ouro:** `sed` **só** para padrões que não contenham acentos nem estejam na mesma linha que caracteres acentuados. Se houver acentos na linha alvo, use `replace_in_file` com SEARCH block sem acentos, ou `write_to_file` como fallback.
 
 ## Plan→Act Handoff (Critical)
 
@@ -194,6 +207,32 @@ if(localStorage.getItem('gk-cookies-accepted')==='1'){loadGA();}
 - SEMPRE versionar CSS/JS com `?v=YYYYMMDD-N`
 - Imagens: WebP com width/height explícitos, lazy loading
 
+### Componente de Compartilhamento (Blog)
+
+Todo artigo de blog deve incluir o bloco de compartilhamento ao final do artigo (após as FAQs, antes do `<p class="note">` de disclaimer):
+
+```html
+<div class="share-block" style="margin-top:40px;padding:20px;border:1px solid var(--rule);background:var(--bg-2);position:relative;">
+  <button id="share-btn" style="display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--bg);border:none;padding:8px 20px;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+    Compartilhar
+  </button>
+  <span id="share-msg" style="display:none;margin-left:12px;font-size:13px;color:var(--accent);">Link copiado!</span>
+  <div id="share-menu" style="display:none;margin-top:16px;padding:16px;background:var(--bg);border:1px solid var(--rule);">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px;">
+      <!-- 9 canais: Copiar link, Email, WhatsApp, Telegram, Facebook, LinkedIn, Instagram, Threads, Reddit -->
+      <!-- Ver blog/acao-trabalhista-trt2-guia.html para o template completo com SVGs -->
+    </div>
+  </div>
+</div>
+```
+
+**Regras:**
+- Posicionar **após o último `<div class="faq">`** e **antes do `<p class="note">`** (disclaimer)
+- JS carregado via `<script src="PREFIXOassets/js/share.js?v=DATA"></script>` antes de `</body>`
+- O arquivo `assets/js/share.js` já contém a lógica completa (Web Share API em mobile, dropdown em desktop, copy-to-clipboard)
+- Para criar uma nova página de blog, copiar o bloco completo de `blog/acao-trabalhista-trt2-guia.html` (linhas do share-block) e ajustar apenas os links nos `href`s
+
 ### Cores do Tema
 
 | Token | Light | Dim |
@@ -204,9 +243,18 @@ if(localStorage.getItem('gk-cookies-accepted')==='1'){loadGA();}
 | `--logo-primary` | `#083f43` | `#7ab8bd` |
 | `--logo-secondary` | `#b9a06a` | `#d4b878` |
 
+### Regras da página blog.html
+
+Ao criar um novo artigo de blog, SEMPRE atualizar `blog.html`:
+
+1. **Lista da categoria**: adicionar `<a href="blog/NOVO-ARTIGO.html" class="artigo-card"><h4>TITULO_DO_ARTIGO</h4><p>Trabalhista</p></a>` (ou `<p>Previdenciário</p>`) na seção correspondente (§ 1 Trabalhistas ou § 2 Previdenciários)
+2. **Últimos posts**: atualizar a seção `.ultimos-posts` (linha 61) substituindo o post mais antigo pelo novo
+
 ### Checklist antes de publicar
 
 - [ ] 1 único H1, hierarquia H1→H2→H3 sem pular níveis
+- [ ] Parágrafo de abertura do artigo usa `class="dropcap"` (letra capitular, como na index.html)
+- [ ] Componente de compartilhamento no final do artigo (após FAQs, antes do disclaimer): botão "Compartilhar" + menu com 9 canais (Copiar link, Email, WhatsApp, Telegram, Facebook, LinkedIn, Instagram, Threads, Reddit) + JS externo `assets/js/share.js?v=DATA`
 - [ ] Title 43-57 chars, description 120-155 chars
 - [ ] Canonical aponta para URL correta (absoluta)
 - [ ] OG image 1200x630 (gk-ribeiro-og.webp)
@@ -216,6 +264,7 @@ if(localStorage.getItem('gk-cookies-accepted')==='1'){loadGA();}
 - [ ] Preconnect apenas `googletagmanager.com`
 - [ ] CSS versionado `forge.css?v=DATA`
 - [ ] JS versionado se `forge-compat.js` foi modificado
+- [ ] `<script src="PREFIXOassets/js/share.js?v=DATA"></script>` antes de `</body>`
 - [ ] Dark mode 🌙/☀ padronizado em HTML e JS
 - [ ] Prefixos de caminho corretos (raiz vs blog/bairros)
 - [ ] WhatsApp link funcional
