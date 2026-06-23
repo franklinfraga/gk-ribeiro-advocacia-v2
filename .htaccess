@@ -16,7 +16,7 @@
 </IfModule>
 
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml font/opentype font/ttf
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml font/opentype font/ttf font/woff2
 </IfModule>
 
 <IfModule mod_expires.c>
@@ -33,5 +33,5 @@
 </IfModule>
 
 <IfModule mod_brotli.c>
-  AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/javascript application/javascript application/json image/svg+xml
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/javascript application/javascript application/json image/svg+xml font/woff2
 </IfModule>
