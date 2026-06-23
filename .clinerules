@@ -249,6 +249,7 @@ Ao criar um novo artigo de blog, SEMPRE atualizar `blog.html`:
 
 1. **Lista da categoria**: adicionar `<a href="blog/NOVO-ARTIGO.html" class="artigo-card"><h4>TITULO_DO_ARTIGO</h4><p>Trabalhista</p></a>` (ou `<p>Previdenciário</p>`) na seção correspondente (§ 1 Trabalhistas ou § 2 Previdenciários)
 2. **Últimos posts**: atualizar a seção `.ultimos-posts` (linha 61) substituindo o post mais antigo pelo novo
+3. **Sitemap**: adicionar nova entrada `<url>` com `<loc>` e `<lastmod>` em `sitemap.xml`
 
 ### Checklist antes de publicar
 
