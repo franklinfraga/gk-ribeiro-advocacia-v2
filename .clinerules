@@ -132,9 +132,12 @@ NUNCA invente variações de layout, fonts, cores ou assets.
 <link rel="stylesheet" href="PREFIXOassets/css/fonts.css?v=20260623-1">
 <!-- Forge CSS versionado (incrementar ?v= a cada deploy) -->
 <link rel="stylesheet" href="PREFIXOassets/css/forge.css?v=20260623-1">
-<!-- GA4 lazy-load (NUNCA usar defer — usar pageshow) -->
+<!-- GA4 consent-based (NUNCA carregar sem consentimento) -->
 <script>
-(function(){'use strict';window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.addEventListener('pageshow',function(){var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-6D54LRFTZN';s.async=true;document.head.appendChild(s);s.onload=function(){gtag('js',new Date());gtag('config','G-6D54LRFTZN');};}, {once:true});})();
+(function(){'use strict';window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+function loadGA(){window.addEventListener('pageshow',function(){var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-6D54LRFTZN';s.async=true;document.head.appendChild(s);s.onload=function(){gtag('js',new Date());gtag('config','G-6D54LRFTZN');};}, {once:true});}
+if(localStorage.getItem('gk-cookies-accepted')==='1'){loadGA();}
+})();
 </script>
 <!-- Schema JSON-LD (Article para blog, LegalService para áreas, WebPage para raiz) -->
 <script type="application/ld+json">
@@ -220,3 +223,7 @@ NUNCA invente variações de layout, fonts, cores ou assets.
 - [ ] Skip-link funcional
 - [ ] Links internos funcionais (sem 404)
 - [ ] "Localização" NÃO aparece na seção "Contato" do footer
+- [ ] Cookie banner com onclick inline (NUNCA usar `onclick="acceptCookies()"`)
+- [ ] Cookie hide script: `<script>if(localStorage.getItem("gk-cookies-accepted")==="1"){document.getElementById("cookie-bar").style.display="none";}</script>`
+- [ ] GA só carrega via `loadGA()` — consentimento obrigatório
+- [ ] Formulários têm aviso LGPD: "Seus dados serão usados exclusivamente para retornar o contato"
