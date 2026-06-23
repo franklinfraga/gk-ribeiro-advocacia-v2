@@ -1,35 +1,65 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="light">
+<html lang="pt-BR" data-theme="dim">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GK Ribeiro Advocacia | Trabalhista e Previdenciário em SP</title>
-<meta name="description" content="Advogada trabalhista e previdenciária em São Paulo - SP, com atendimento presencial e online para trabalhadores, empresas e demandas do INSS.">
-<link rel="canonical" href="https://gkribeiro.adv.br/">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="GK Ribeiro Advocacia | Trabalhista e Previdenciário em SP">
-<meta property="og:description" content="Advogada trabalhista e previdenciária em São Paulo - SP, com atendimento presencial e online para trabalhadores, empresas e demandas do INSS.">
-<meta property="og:url" content="https://gkribeiro.adv.br/">
-<meta property="og:image" content="https://gkribeiro.adv.br/assets/img/gk-ribeiro-og.webp">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="GK Ribeiro Advocacia | Trabalhista e Previdenciário em SP">
-<meta name="twitter:description" content="Advogada trabalhista e previdenciária em São Paulo - SP, com atendimento presencial e online para trabalhadores, empresas e demandas do INSS.">
-<meta name="twitter:image" content="https://gkribeiro.adv.br/assets/img/gk-ribeiro-og.webp">
-<meta name="theme-color" content="#083f43">
-<link rel="icon" href="assets/logo/logo-gk-simples.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
+<title>Preview Dark Mode — GK Ribeiro (página principal)</title>
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="stylesheet" href="assets/css/fonts.css?v=20260623-1">
-<link rel="stylesheet" href="assets/css/forge.css?v=20260623-2">
-<script>
-(function(){'use strict';window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.addEventListener('pageshow',function(){var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-6D54LRFTZN';s.async=true;document.head.appendChild(s);s.onload=function(){gtag('js',new Date());gtag('config','G-6D54LRFTZN');};}, {once:true});})();
-</script>
+<!-- Forge CSS original (light theme) -->
+<link rel="stylesheet" href="assets/css/forge.css?v=20260623-1">
+<style>
+/* Sobrescreve o dark mode antigo com novo tom azul petróleo + logo original */
+[data-theme="dim"] {
+  --bg: #0f181e;
+  --bg-2: #152026;
+  --bg-3: #0b1216;
+  --bg-code: #111a20;
+  --ink: #e6dec8;
+  --ink-2: #b8ad94;
+  --ink-3: #7d735a;
+  --rule: #1e2a32;
+  --rule-soft: #162028;
+  --accent: #78b8c8;
+  --accent-2: #90ccda;
+  --gold: #d4a83a;
+  --sage: #9ab068;
+  --rust-red: #d97070;
+  --rust-green: #88b878;
+  /* Logo: cores ORIGINAIS mantidas no dark mode */
+  --logo-primary: #083f43;
+  --logo-secondary: #b9a06a;
+  --logo-stroke: #050505;
+}
+
+/* Banner de preview */
+.preview-bar {
+  background: #000;
+  color: #78b8c8;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-family: var(--mono);
+  letter-spacing: 0.05em;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid #1e2a32;
+}
+.preview-bar strong { color: #e6dec8; }
+.preview-bar .badge { background: #1e2a32; padding: 2px 8px; border-radius: 3px; margin: 0 4px; }
+.preview-bar .old { text-decoration: line-through; color: #7d735a; }
+.preview-bar .new { color: #78b8c8; }
+</style>
 </head>
 <body>
-<a href="#main-content" class="skip-link" style="position:absolute;top:-100px;left:8px;background:var(--accent);color:var(--bg);padding:8px 16px;z-index:9999;font-size:14px;transition:top 0.2s;">Pular para o conteúdo</a>
+<div class="preview-bar">
+  <strong>🔮 PREVIEW — Novo Dark Mode</strong> &nbsp;
+  Fundo: <span class="old">#181410</span> → <span class="new">#0f181e</span> &nbsp; | &nbsp;
+  Logo: <span class="badge" style="background:#083f43;color:#e6dec8;">#083f43</span> + <span class="badge" style="background:#b9a06a;color:#050505;">#b9a06a</span> (original em ambos os temas)
+</div>
+
+<a href="#main-content" class="skip-link">Pular para o conteúdo</a>
 
 <header class="masthead">
   <div class="wrap">
@@ -47,7 +77,7 @@
         <a href="sobre.html">Sobre</a>
         <a href="localizacao.html">Localização</a>
         <a href="contato.html">Contato</a>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema"><span data-theme-label>&#9782;</span></button>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema"><span data-theme-label>🌙</span></button>
         <button class="nav-mobile-toggle" data-nav-toggle aria-label="Abrir menu" style="display:none;">☰ Menu</button>
       </nav>
     </div>
@@ -66,7 +96,7 @@
       <h2 style="font-family:var(--serif-display);font-weight:500;font-size:clamp(22px,2.8vw,34px);letter-spacing:-0.015em;line-height:1.12;margin-bottom:24px;font-variation-settings:'opsz' 48;">Direito Trabalhista <em style="font-style:italic;font-weight:400;color:var(--accent);">e Previdenciário.</em></h2>
       <p class="hero-deck">Orientação jurídica especializada para trabalhadores, empresas e pessoas com demandas do INSS. Atendimento presencial em São Paulo e online para todo o Brasil, com clareza, segurança e respeito aos seus direitos.</p>
       <div class="hero-meta"><div class="meta-cell"><span class="meta-label">Advogada</span><span class="meta-value">Greice K. Ribeiro</span><span class="meta-sub">10+ anos de atuação</span></div><div class="meta-cell"><span class="meta-label">Áreas</span><span class="meta-value">2 principais</span><span class="meta-sub">trabalhista e previdenciário</span></div><div class="meta-cell"><span class="meta-label">Atendimento</span><span class="meta-value">SP + Online</span><span class="meta-sub">presencial e remoto</span></div></div>
-      <div class="hero-actions"><a href="https://wa.me/5511957314252?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20GK%20Ribeiro%20Advocacia%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20atendimento." class="btn-primary">Conversar pelo WhatsApp <span class="arrow">→</span></a></div>
+      <div class="hero-actions"><a href="#" class="btn-primary">Conversar pelo WhatsApp <span class="arrow">→</span></a></div>
     </div>
     <aside class="hero-aside">
       <div class="aside-head"><span>Atendimento</span></div>
@@ -84,51 +114,23 @@
   <div class="wrap"><div class="chapter-layout">
     <aside class="chapter-toc">
       <div class="toc-section"><div class="toc-label">Nesta página</div><ul class="toc-list"><li><a href="#areas">I. Áreas de Atuação</a></li><li><a href="#bairros">II. Atendimento nos Bairros</a></li><li><a href="#atendimento">III. Atendimento</a></li><li><a href="#faq">IV. Perguntas frequentes</a></li></ul></div>
-      <div class="toc-section"><div class="toc-label">Links rápidos</div><ul class="toc-list"><li><a href="blog.html">Blog</a></li><li><a href="trabalhista.html">Trabalhista</a></li><li><a href="previdenciario.html">Previdenciário</a></li><li><a href="sobre.html">Sobre</a></li><li><a href="contato.html">Contato</a></li></ul></div>
+      <div class="toc-section"><div class="toc-label">Links rápidos</div><ul class="toc-list"><li><a href="#">Blog</a></li><li><a href="#">Trabalhista</a></li><li><a href="#">Previdenciário</a></li><li><a href="#">Sobre</a></li><li><a href="#">Contato</a></li></ul></div>
     </aside>
     <article class="chapter-body">
       <h3 id="areas"><span class="num">I.</span> Áreas de Atuação</h3>
       <p class="dropcap">Questões trabalhistas e previdenciárias podem surgir de formas inesperadas. A análise individualizada ajuda a entender direitos, riscos, documentos e medidas adequadas para cada situação.</p>
       <div class="library-list" style="margin-bottom:48px;">
-        <article class="library-item" style="padding-top:0;"><div class="lib-num">I.</div><div class="lib-body"><h3 class="lib-title">Direito Trabalhista</h3><p class="lib-desc">Atuação para trabalhadores, profissionais, empresas e gestores. Analisamos a situação concreta para identificar riscos, irregularidades, direitos envolvidos e caminhos jurídicos adequados.<br><br><strong>Situações comuns:</strong></p><ul><li>Verbas rescisórias e demissão sem justa causa</li><li>Horas extras, intervalo e jornada de trabalho</li><li>FGTS, registro em carteira e vínculo de emprego</li><li>Assédio moral, danos morais e equiparação salarial</li><li>Orientação preventiva para empresas e gestores</li></ul><a href="trabalhista.html" class="lib-link">Ver todas as demandas trabalhistas →</a></div></article>
-        <article class="library-item"><div class="lib-num">II.</div><div class="lib-body"><h3 class="lib-title">Direito Previdenciário</h3><p class="lib-desc">Consultoria e planejamento para garantir a sua segurança financeira e o seu futuro junto ao INSS. Atuamos tanto na busca pelo melhor benefício quanto na reversão de negativas do órgão.<br><br><strong>Serviços:</strong></p><ul><li>Aposentadoria por idade, tempo e regras de transição</li><li>Auxílio-doença e benefício por incapacidade</li><li>BPC/LOAS para idosos e pessoas com deficiência</li><li>Benefício negado pelo INSS e revisão de benefício</li><li>Pensão por morte e salário-maternidade</li></ul><a href="previdenciario.html" class="lib-link">Ver serviços previdenciários →</a></div></article>
-      </div>
-      <h3 id="bairros"><span class="num">II.</span> Atendimento nos Bairros — Zona Leste de São Paulo</h3>
-      <p style="margin:0 0 20px 0;color:var(--ink-2);">Páginas informativas sobre direitos trabalhistas e previdenciários em cada bairro da Zona Leste.</p>
-      <div class="bairros-grid" style="margin:0 0 48px 0;">
-        <a href="bairros/advogado-itaquera.html" class="bairro-card"><h4>Itaquera</h4><p>Pejotização, horas extras, aposentadoria</p></a>
-        <a href="bairros/advogado-penha.html" class="bairro-card"><h4>Penha</h4><p>Verbas rescisórias, FGTS, comissões</p></a>
-        <a href="bairros/advogado-mooca.html" class="bairro-card"><h4>Mooca</h4><p>Vínculo, terceirização, aposentadoria</p></a>
-        <a href="bairros/advogado-tatuape.html" class="bairro-card"><h4>Tatuapé</h4><p>Assédio moral, rescisão indireta</p></a>
-        <a href="bairros/advogado-sao-mateus.html" class="bairro-card"><h4>São Mateus</h4><p>Acidente de trabalho, insalubridade</p></a>
-        <a href="bairros/advogado-vila-prudente.html" class="bairro-card"><h4>Vila Prudente</h4><p>Insalubridade, periculosidade</p></a>
-        <a href="bairros/advogado-sapopemba.html" class="bairro-card"><h4>Sapopemba</h4><p>Auxílio-doença, BPC/LOAS</p></a>
-        <a href="bairros/advogado-guaianases.html" class="bairro-card"><h4>Guaianases</h4><p>Trabalho sem registro, BPC</p></a>
-        <a href="bairros/advogado-ermelino-matarazzo.html" class="bairro-card"><h4>Ermelino Matarazzo</h4><p>LER/DORT, acidente de trabalho</p></a>
-        <a href="bairros/advogado-cidade-tiradentes.html" class="bairro-card"><h4>Cidade Tiradentes</h4><p>Vínculo informal, BPC/LOAS</p></a>
+        <article class="library-item" style="padding-top:0;"><div class="lib-num">I.</div><div class="lib-body"><h3 class="lib-title">Direito Trabalhista</h3><p class="lib-desc">Atuação para trabalhadores, profissionais, empresas e gestores. Analisamos a situação concreta para identificar riscos, irregularidades, direitos envolvidos e caminhos jurídicos adequados.<br><br><strong>Situações comuns:</strong></p><ul><li>Verbas rescisórias e demissão sem justa causa</li><li>Horas extras, intervalo e jornada de trabalho</li><li>FGTS, registro em carteira e vínculo de emprego</li><li>Assédio moral, danos morais e equiparação salarial</li><li>Orientação preventiva para empresas e gestores</li></ul><a href="#" class="lib-link">Ver todas as demandas trabalhistas →</a></div></article>
+        <article class="library-item"><div class="lib-num">II.</div><div class="lib-body"><h3 class="lib-title">Direito Previdenciário</h3><p class="lib-desc">Consultoria e planejamento para garantir a sua segurança financeira e o seu futuro junto ao INSS. Atuamos tanto na busca pelo melhor benefício quanto na reversão de negativas do órgão.<br><br><strong>Serviços:</strong></p><ul><li>Aposentadoria por idade, tempo e regras de transição</li><li>Auxílio-doença e benefício por incapacidade</li><li>BPC/LOAS para idosos e pessoas com deficiência</li><li>Benefício negado pelo INSS e revisão de benefício</li><li>Pensão por morte e salário-maternidade</li></ul><a href="#" class="lib-link">Ver serviços previdenciários →</a></div></article>
       </div>
       <h3 id="atendimento"><span class="num">III.</span> Como funciona o atendimento</h3>
       <p class="dropcap">A GK Ribeiro atende demandas trabalhistas de trabalhadores e empresas, além de demandas previdenciárias, com foco em escuta, análise documental e comunicação objetiva.</p>
-      <p>À frente do atendimento está a Dra. Greice Kelli Ribeiro. Especialista em Direito do Trabalho, ela soma mais de 10 anos de atuação dedicada à defesa dos direitos trabalhistas e previdenciários de seus clientes.</p>
       <blockquote class="pull-quote">Cada caso depende de análise individual dos documentos, prazos e histórico, sem promessa de resultado. O objetivo é explicar caminhos possíveis com linguagem clara e responsabilidade.<span class="pull-quote-attr">— Dra. Greice Kelli Ribeiro, OAB/SP 387.933</span></blockquote>
-      <p>O atendimento presencial é organizado mediante confirmação prévia, na Zona Leste (Rua Inácio Monteiro, 2220, Jardim São Paulo) ou no Centro (Rua Líbero Badaró, 101, 12 andar, Edifício Meridional). O atendimento online também permite organizar documentos, esclarecer dúvidas iniciais e acompanhar orientações de forma prática para clientes de outras regiões.</p>
-      <h3 style="margin-top:32px;">Documentos que ajudam na análise</h3>
-      <p>A lista abaixo é orientativa. A necessidade de documentos pode variar conforme o caso, mas em geral é útil reunir:</p>
-      <ul style="list-style:none;padding-left:0;"><li style="padding:3px 0;color:var(--ink-2);">— Carteira de trabalho física ou digital</li><li style="padding:3px 0;color:var(--ink-2);">— Contrato de trabalho, holerites e comprovantes de pagamento</li><li style="padding:3px 0;color:var(--ink-2);">— Extrato analítico do FGTS e documentos de rescisão</li><li style="padding:3px 0;color:var(--ink-2);">— Cartões de ponto, escalas, mensagens e e-mails</li><li style="padding:3px 0;color:var(--ink-2);">— Laudos, exames e relatórios médicos (demandas previdenciárias)</li><li style="padding:3px 0;color:var(--ink-2);">— Documentos de identificação</li></ul>
-      <p style="margin:24px 0 20px 0;color:var(--ink-2);">Solicite orientação trabalhista ou previdenciária pelo formulário abaixo.</p>
-      <form class="contact-form" action="https://formsubmit.co/atendimento@gkribeiro.adv.br" method="POST"><input type="hidden" name="_subject" value="Contato via site - GK Ribeiro Advocacia"><input type="hidden" name="_template" value="box"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="https://gkribeiro.adv.br/obrigado.html"><input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="form-row"><label class="form-label" for="nome">Nome completo</label><input class="form-input" type="text" id="nome" name="nome" placeholder="Seu nome" required></div>
-        <div class="form-row"><label class="form-label" for="whatsapp">WhatsApp</label><input class="form-input" type="tel" id="whatsapp" name="whatsapp" placeholder="(11) 99999-9999" required></div>
-        <div class="form-row"><label class="form-label" for="mensagem">Mensagem</label><textarea class="form-input" id="mensagem" name="mensagem" rows="4" placeholder="Descreva resumidamente sua situação..." required></textarea></div>
-        <button class="form-submit" type="submit">Enviar mensagem <span class="arrow">→</span></button>
-      </form>
-      <p style="font-size:13px;color:var(--ink-3);margin-top:16px;">Ou ligue para <a href="tel:+5511957314252" style="color:var(--accent);">(11) 95731-4252</a></p>
-      <h3 id="faq"><span class="num">V.</span> Perguntas frequentes</h3>
+      <h3 id="faq"><span class="num">IV.</span> Perguntas frequentes</h3>
       <div class="faq-list">
         <div class="faq-item"><div class="faq-question" role="button" tabindex="0">Fui demitido. Preciso conferir a rescisão?<span class="faq-toggle">+</span></div><div class="faq-answer"><p>A conferência pode ajudar a verificar se os valores e documentos da saída estão coerentes com a forma de desligamento, tempo de serviço e verbas aplicáveis.</p></div></div>
         <div class="faq-item"><div class="faq-question" role="button" tabindex="0">Trabalhei sem registro. Posso buscar reconhecimento de vínculo?<span class="faq-toggle">+</span></div><div class="faq-answer"><p>Em algumas situações, a rotina de trabalho pode indicar relação de emprego. É necessário analisar fatos, provas e documentos para avaliar caminhos possíveis.</p></div></div>
         <div class="faq-item"><div class="faq-question" role="button" tabindex="0">O INSS negou meu benefício. O que fazer?<span class="faq-toggle">+</span></div><div class="faq-answer"><p>Quando o INSS nega um benefício, é possível entrar com recurso administrativo ou ação judicial. A análise dos documentos médicos, laudos e do CNIS ajuda a identificar o melhor caminho.</p></div></div>
-        <div class="faq-item"><div class="faq-question" role="button" tabindex="0">Como funciona o atendimento online?<span class="faq-toggle">+</span></div><div class="faq-answer"><p>O atendimento online permite envio de documentos e orientação remota, respeitando as necessidades do caso e a disponibilidade das partes.</p></div></div>
       </div>
       <p style="font-size:14px;color:var(--ink-3);font-style:italic;margin-top:32px;">Este conteúdo é informativo e não substitui análise jurídica individualizada. Responsável técnica: Dra. Greice Kelli Ribeiro.</p>
     </article>
@@ -138,17 +140,16 @@
 </main>
 
 <footer class="colophon"><div class="wrap"><div class="colophon-grid"><div class="col-block"><h4>GK Ribeiro Advocacia</h4><p><em>Dra. Greice Kelli Ribeiro</em> · OAB/SP 387.933<br>Advocacia Trabalhista e Previdenciária.</p></div><div class="col-block"><h4>Endereços</h4><p><em>Zona Leste:</em> Rua Inácio Monteiro, 2220, Jardim São Paulo<br><em>Centro:</em> Rua Líbero Badaró, 101, 12 andar</p></div><div class="col-block"><h4>Contato</h4><ul><li><a href="tel:+5511957314252">(11) 95731-4252</a></li><li><a href="mailto:atendimento@gkribeiro.adv.br">atendimento@gkribeiro.adv.br</a></li><li><a href="https://www.instagram.com/gkribeiro.adv/" target="_blank" rel="noopener">@gkribeiro.adv</a></li></ul></div></div><div class="colophon-foot"><span>GK Ribeiro Advocacia Trabalhista e Previdenciária</span><span class="colophon-mark">— São Paulo - SP —</span><span>© <span data-year></span> · conteúdo informativo</span></div></div></footer>
-<a class="floating-whatsapp" href="https://wa.me/5511957314252?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20GK%20Ribeiro%20Advocacia%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20atendimento." aria-label="Chamar no WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3.2A12.72 12.72 0 0 0 5.15 22.5L3.4 28.8l6.45-1.69A12.72 12.72 0 1 0 16.04 3.2Zm0 2.3a10.43 10.43 0 0 1 8.89 15.9 10.42 10.42 0 0 1-13.94 3.55l-.46-.27-3.83 1 1.03-3.72-.3-.49a10.42 10.42 0 0 1 8.61-15.97Zm-4.5 5.65c-.23 0-.6.09-.91.43-.31.34-1.2 1.17-1.2 2.86s1.23 3.32 1.4 3.55c.17.23 2.38 3.8 5.86 5.17 2.9 1.14 3.49.91 4.12.86.63-.06 2.03-.83 2.32-1.63.29-.8.29-1.49.2-1.63-.09-.14-.31-.23-.66-.4-.34-.17-2.03-1-2.35-1.12-.31-.11-.54-.17-.77.18-.23.34-.89 1.12-1.09 1.34-.2.23-.4.26-.74.09-.34-.17-1.45-.54-2.76-1.7-1.02-.91-1.71-2.03-1.91-2.38-.2-.34-.02-.53.15-.7.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.09-.17-.77-1.86-1.06-2.55-.28-.67-.57-.58-.77-.59h-.66Z"/></svg></a>
+<a class="floating-whatsapp" href="#" aria-label="Chamar no WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3.2A12.72 12.72 0 0 0 5.15 22.5L3.4 28.8l6.45-1.69A12.72 12.72 0 1 0 16.04 3.2Zm0 2.3a10.43 10.43 0 0 1 8.89 15.9 10.42 10.42 0 0 1-13.94 3.55l-.46-.27-3.83 1 1.03-3.72-.3-.49a10.42 10.42 0 0 1 8.61-15.97Zm-4.5 5.65c-.23 0-.6.09-.91.43-.31.34-1.2 1.17-1.2 2.86s1.23 3.32 1.4 3.55c.17.23 2.38 3.8 5.86 5.17 2.9 1.14 3.49.91 4.12.86.63-.06 2.03-.83 2.32-1.63.29-.8.29-1.49.2-1.63-.09-.14-.31-.23-.66-.4-.34-.17-2.03-1-2.35-1.12-.31-.11-.54-.17-.77.18-.23.34-.89 1.12-1.09 1.34-.2.23-.4.26-.74.09-.34-.17-1.45-.54-2.76-1.7-1.02-.91-1.71-2.03-1.91-2.38-.2-.34-.02-.53.15-.7.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.09-.17-.77-1.86-1.06-2.55-.28-.67-.57-.58-.77-.59h-.66Z"/></svg></a>
+
 <script>
 (function(){'use strict';var root=document.documentElement;var toggle=document.getElementById('theme-toggle');if(toggle){var label=toggle.querySelector('[data-theme-label]');var saved=localStorage.getItem('gk-theme');if(saved){root.setAttribute('data-theme',saved);label.textContent=saved==='dim'?'☀':'🌙';}
 toggle.addEventListener('click',function(){var cur=root.getAttribute('data-theme');var next=cur==='dim'?'light':'dim';root.setAttribute('data-theme',next);label.textContent=next==='dim'?'☀':'🌙';localStorage.setItem('gk-theme',next);});}
 var progressLine=document.getElementById('progress-line');if(progressLine){var ticking=false;function updateProgress(){var scrollTop=window.scrollY;var docHeight=document.documentElement.scrollHeight-window.innerHeight;progressLine.style.width=(docHeight>0?Math.min(1,scrollTop/docHeight)*100:0)+'%';ticking=false;}
 window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(updateProgress);ticking=true;}},{passive:true});updateProgress();}
 document.querySelectorAll('.faq-question').forEach(function(q){q.addEventListener('click',function(){q.parentElement.classList.toggle('open');});q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();q.click();}});});
-var forms=document.querySelectorAll('.contact-form');if(forms.length){var COOLDOWN=30000;forms.forEach(function(form){form.addEventListener('submit',function(e){var last=parseInt(form.dataset.lastSubmit||'0',10);var now=Date.now();if(now-last<COOLDOWN){e.preventDefault();var remaining=Math.ceil((COOLDOWN-(now-last))/1000);alert('Aguarde '+remaining+' segundos.');return;}
-form.dataset.lastSubmit=String(now);});});}
 document.querySelectorAll('[data-year]').forEach(function(el){el.textContent=new Date().getFullYear();});
-var navToggle=document.querySelector('[data-nav-toggle]');if(navToggle){navToggle.addEventListener('click',function(){var nav=this.closest('.primary-nav');nav.classList.toggle('open');this.textContent=nav.classList.contains('open')?'✕ Fechar':'☰ Menu';});}})();
+})();
 </script>
 </body>
 </html>

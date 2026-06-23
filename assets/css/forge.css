@@ -25,24 +25,24 @@
 }
 
 [data-theme="dim"] {
-  --bg: #181410;
-  --bg-2: #211c15;
-  --bg-3: #141009;
-  --bg-code: #1f1a13;
+  --bg: #0f181e;
+  --bg-2: #152026;
+  --bg-3: #0b1216;
+  --bg-code: #111a20;
   --ink: #e6dec8;
   --ink-2: #b8ad94;
   --ink-3: #7d735a;
-  --rule: #3a3328;
-  --rule-soft: #2a2418;
-  --accent: #6ab0b5;
-  --accent-2: #88c0c5;
+  --rule: #1e2a32;
+  --rule-soft: #162028;
+  --accent: #78b8c8;
+  --accent-2: #90ccda;
   --gold: #d4a83a;
   --sage: #9ab068;
   --rust-red: #d97070;
   --rust-green: #88b878;
-  --logo-primary: #7ab8bd;
-  --logo-secondary: #d4b878;
-  --logo-stroke: #1c1813;
+  --logo-primary: #083f43;
+  --logo-secondary: #b9a06a;
+  --logo-stroke: #050505;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
