@@ -130,7 +130,7 @@ ol, ul { list-style: none; }
 }
 
 /* ============ Hero ============ */
-.hero { padding: 72px 0 96px; border-bottom: 1px solid var(--rule); content-visibility: auto; contain-intrinsic-size: 800px; }
+.hero { padding: 72px 0 96px; border-bottom: 1px solid var(--rule); }
 
 .hero-grid { display: grid; grid-template-columns: 7fr 5fr; gap: 72px; }
 @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 56px; } }
@@ -237,6 +237,36 @@ ol, ul { list-style: none; }
 
 .aside-foot { margin-top: 18px; font-size: 12px; color: var(--ink-3); font-style: italic; text-align: right; }
 
+.hero-services { margin-top: 32px; padding: 20px; border: 1px solid var(--rule); background: var(--bg-2); }
+.hero-services h2 { font-family: var(--serif-display); font-weight: 500; font-size: 22px; letter-spacing: -0.012em; margin: 0 0 16px; color: var(--ink); }
+.hero-services h3 { font-size: 11px; font-variant: small-caps; letter-spacing: 0.12em; color: var(--accent); margin: 20px 0 4px; }
+.hero-services h2 + h3 { margin-top: 0; }
+.hero-services .faq-list { margin: 0; content-visibility: visible; contain-intrinsic-size: auto; }
+.hero-services .faq-item { padding: 10px 0; }
+.hero-services .faq-question { font-size: 14px; line-height: 1.35; }
+.hero-services .faq-question .faq-toggle { font-size: 19px; }
+.hero-services .faq-answer { font-size: 13px; line-height: 1.5; }
+.hero-services .faq-item.open .faq-answer,
+.hero-services .faq-item[open] .faq-answer { max-height: 180px; padding-top: 8px; }
+
+.about-reviews { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--rule); }
+.about-reviews-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 14px; }
+.about-reviews-head h2 { font-family: var(--serif-display); font-weight: 500; font-size: 20px; letter-spacing: -0.012em; margin: 0; }
+.about-reviews-source { color: #d99a16; font-size: 14px; letter-spacing: 0.08em; white-space: nowrap; }
+.about-reviews-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.about-review { margin: 0; padding: 18px; border: 1px solid var(--rule); background: var(--bg-2); display: flex; flex-direction: column; }
+.about-review-author { display: flex; align-items: center; gap: 10px; }
+.about-review-avatar { width: 34px; height: 34px; border-radius: 50%; display: inline-grid; place-items: center; flex: 0 0 34px; font-family: var(--mono); font-size: 10px; font-weight: 600; color: #fff; letter-spacing: 0.02em; }
+.about-review-avatar-davi { background: #7f69bb; }
+.about-review-avatar-technote { background: #0f4b7a; }
+.about-review-author strong { display: block; font-size: 13px; font-weight: 500; color: var(--ink); line-height: 1.25; }
+.about-review-stars { display: block; margin-top: 3px; color: #d99a16; font-size: 12px; letter-spacing: 0.08em; }
+.about-review blockquote { margin: 16px 0; font-size: 14px; line-height: 1.5; color: var(--ink); }
+.about-review-reply { margin-top: auto; padding: 12px 0 0 12px; border-left: 2px solid var(--rule); }
+.about-review-reply span { display: block; font-size: 10px; font-variant: small-caps; letter-spacing: 0.08em; color: var(--accent); }
+.about-review-reply p { margin: 6px 0 0; font-size: 12px; line-height: 1.45; color: var(--ink-2); }
+@media (max-width: 720px) { .about-reviews-grid { grid-template-columns: 1fr; } }
+
 /* ============ Section head ============ */
 .section-head {
   display: grid;
@@ -306,7 +336,8 @@ ol, ul { list-style: none; }
 
 .chapter-body { max-width: 680px; font-size: 18px; line-height: 1.68; color: var(--ink); }
 
-.chapter-body h3 {
+.chapter-body > h2,
+.chapter-body > h3 {
   font-family: var(--serif-display);
   font-weight: 500;
   font-size: 28px;
@@ -317,7 +348,8 @@ ol, ul { list-style: none; }
   scroll-margin-top: 100px;
 }
 
-.chapter-body h3 .num { font-family: var(--mono); font-size: 12px; color: var(--accent); font-weight: 500; letter-spacing: 0; display: block; margin-bottom: 4px; }
+.chapter-body > h2 .num,
+.chapter-body > h3 .num { font-family: var(--mono); font-size: 12px; color: var(--accent); font-weight: 500; letter-spacing: 0; display: block; margin-bottom: 4px; }
 .chapter-body p { margin-bottom: 22px; }
 
 .dropcap { display: block; font-size: 18px; line-height: 1.68; }
@@ -369,8 +401,11 @@ ol, ul { list-style: none; }
   transition: color 0.2s;
 }
 .faq-question:hover { color: var(--accent); }
+.faq-item > summary { list-style: none; }
+.faq-item > summary::-webkit-details-marker { display: none; }
 .faq-question .faq-toggle { font-size: 22px; color: var(--ink-3); transition: transform 0.3s; }
-.faq-item.open .faq-toggle { transform: rotate(45deg); color: var(--accent); }
+.faq-item.open .faq-toggle,
+.faq-item[open] .faq-toggle { transform: rotate(45deg); color: var(--accent); }
 .faq-answer {
   font-size: 15px;
   color: var(--ink-2);
@@ -379,7 +414,8 @@ ol, ul { list-style: none; }
   overflow: hidden;
   transition: max-height 0.4s ease, padding 0.4s ease;
 }
-.faq-item.open .faq-answer { max-height: 300px; padding-top: 12px; }
+.faq-item.open .faq-answer,
+.faq-item[open] .faq-answer { max-height: 300px; padding-top: 12px; }
 
 /* ============ Bairros ============ */
 .bairros-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin: 24px 0; content-visibility: auto; contain-intrinsic-size: 200px; }
@@ -393,6 +429,7 @@ ol, ul { list-style: none; }
   text-align: center;
 }
 .bairro-card:hover { background: var(--bg-2); border-color: var(--accent); }
+.bairro-card h3,
 .bairro-card h4 { font-family: var(--serif-display); font-weight: 500; font-size: 15px; }
 .bairro-card p { font-size: 12px; color: var(--ink-3); margin-top: 4px; font-style: italic; }
 
@@ -447,6 +484,7 @@ textarea.form-input { min-height: 100px; resize: vertical; line-height: 1.5; }
 .colophon-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
 @media (max-width: 720px) { .colophon-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
 
+.col-block h2,
 .col-block h4 { font-family: var(--serif-display); font-weight: 500; font-size: 11px; font-variant: small-caps; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 12px; }
 .col-block p { font-size: 13px; color: var(--ink-2); line-height: 1.55; }
 .col-block p em { font-style: italic; color: var(--ink); }
