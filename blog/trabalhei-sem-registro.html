@@ -159,245 +159,71 @@
               </div>
 
               <div class="share-block" style="margin-top:40px;padding:20px;border:1px solid var(--rule);background:var(--bg-2);position:relative;">
-        <button id="share-btn" style="display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--bg);border:none;padding:8px 20px;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;">
+        <button id="share-btn" type="button" aria-expanded="false" aria-controls="share-menu" style="display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--bg);border:none;padding:8px 20px;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           Compartilhar
         </button>
-        <span id="share-msg" style="display:none;margin-left:12px;font-size:13px;color:var(--accent);">Link copiado!</span>
-        <div id="share-menu" style="display:none;margin-top:16px;padding:16px;background:var(--bg);border:1px solid var(--rule);">
+        <span id="share-msg" hidden style="margin-left:12px;font-size:13px;color:var(--accent);">Link copiado!</span>
+        <div id="share-menu" hidden style="margin-top:16px;padding:16px;background:var(--bg);border:1px solid var(--rule);">
           <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px;">
-            <a href="#" data-share="copy" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar link</a>
-            <a href="mailto:?subject=Trabalhei%20sem%20registro%3A%20o%20que%20observar%3F&body=https://gkribeiro.adv.br/blog/trabalhei-sem-registro.html" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Email</a>
-            <a href="https://wa.me/?text=Trabalhei%20sem%20registro%3A%20o%20que%20observar%3F%20https%3A%2F%2Fgkribeiro.adv.br%2Fblog%2Ftrabalhei-sem-registro.html" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3.2A12.72 12.72 0 0 0 5.15 22.5L3.4 28.8l6.45-1.69A12.72 12.72 0 1 0 16.04 3.2Zm0 2.3a10.43 10.43 0 0 1 8.89 15.9 10.42 10.42 0 0 1-13.94 3.55l-.46-.27-3.83 1 1.03-3.72-.3-.49a10.42 10.42 0 0 1 8.61-15.97Z"/></svg> WhatsApp</a>
-            <a href="https://telegram.me/share/url?url=https://gkribeiro.adv.br/blog/trabalhei-sem-registro.html&text=Trabalhei%20sem%20registro%3A%20o%20que%20observar%3F" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg> Telegram</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://gkribeiro.adv.br/blog/trabalhei-sem-registro.html" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</a>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://gkribeiro.adv.br/blog/trabalhei-sem-registro.html&title=Trabalhei%20sem%20registro%3A%20o%20que%20observar%3F" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg> Instagram</a>
-            <a href="https://www.threads.net/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.14 10.56c-.68-.34-1.16-.78-1.16-1.55 0-.66.28-1.14.76-1.48.5-.37 1.16-.5 1.84-.46.89.06 1.57.35 2.09.78.52.43.8.95.8.95l1.72-1.12s-.58-1.07-1.6-1.72c-.79-.5-1.81-.83-3.06-.88-1.26-.05-2.4.16-3.37.62-.74.36-1.36.87-1.8 1.52-.5.75-.72 1.63-.7 2.58.02.95.22 1.74.67 2.44.94 1.47 2.37 2.07 3.67 2.64.98.39 1.87.72 2.48 1.13.43.3.62.62.62 1.05 0 .43-.19.82-.57 1.14-.47.39-1.28.62-2.35.57-1.56-.06-2.6-.72-3.19-1.49-.37-.49-.6-1.02-.7-1.57l-2.34.3c.12.91.46 1.74 1 2.44.82 1.08 2.08 1.88 3.83 2.19.79.14 1.6.16 2.38.04 1.09-.17 2.07-.55 2.87-1.12.66-.47 1.18-1.06 1.52-1.74.34-.68.52-1.43.5-2.21-.02-.63-.18-1.21-.48-1.72-.42-.72-1.05-1.25-1.78-1.64-.7-.37-1.51-.66-2.22-.97-.67-.28-1.2-.56-1.54-.88-.28-.27-.4-.57-.4-.95 0-.38.14-.71.42-.96.32-.27.76-.4 1.26-.4.48 0 1.03.12 1.5.4.54.33.86.81 1.02 1.39l2.3-.23c-.2-1.34-.84-2.29-1.83-2.97-.81-.55-1.85-.87-3.04-.95-1.35-.09-2.58.17-3.66.69-.87.43-1.6 1.02-2.16 1.77-.5.66-.82 1.37-.97 2.14-.12.59-.15 1.17-.1 1.72.06.9.32 1.68.76 2.37.82 1.29 2.08 1.9 3.46 2.44.97.33 1.83.66 2.4 1.03.34.23.53.48.53.85 0 .33-.14.62-.43.85-.34.27-.8.42-1.36.42-.58 0-1.05-.14-1.38-.32-.52-.3-.88-.76-1.1-1.4l-2.29.53c.4 1.27 1.1 2.24 2.1 2.94.8.57 1.78.94 2.91 1.08.84.1 1.7.07 2.52-.12 1.1-.25 2.06-.72 2.85-1.37.76-.63 1.29-1.4 1.6-2.3.27-.77.38-1.58.34-2.4-.04-.72-.21-1.4-.5-2.01-.38-.82-.98-1.5-1.78-2.01z"/></svg> Threads</a>
-            <a href="https://www.reddit.com/submit?url=https://gkribeiro.adv.br/blog/trabalhei-sem-registro.html&title=Trabalhei%20sem%20registro%3A%20o%20que%20observar%3F" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.77 8.23c.89 0 1.62.73 1.62 1.62 0 .62-.35 1.16-.86 1.41.07.33.11.66.11 1 0 3.29-3.3 5.97-7.37 5.97S4.36 15.55 4.36 12.26c0-.34.04-.67.11-1-.5-.25-.86-.79-.86-1.41 0-.89.73-1.62 1.62-1.62.47 0 .89.2 1.19.52 1.15-.84 2.67-1.37 4.33-1.42l.92-3.89c.02-.09.1-.15.19-.16l3.08-.34c.17.36.53.62.96.62.58 0 1.05-.47 1.05-1.05 0-.58-.47-1.05-1.05-1.05-.43 0-.8.26-.96.62l-3.08.34a.2.2 0 0 0-.15.1l-.92 3.89c-1.66.05-3.17.58-4.33 1.42a1.67 1.67 0 0 0-1.19-.52c-.89 0-1.62.73-1.62 1.62 0 .62.35 1.16.85 1.41-.07.33-.11.66-.11 1 0 3.29 3.3 5.97 7.37 5.97s7.37-2.68 7.37-5.97c0-.34-.04-.67-.11-1 .5-.25.86-.79.86-1.41z"/></svg> Reddit</a>
+            <button type="button" data-share="copy" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;background:var(--bg);cursor:pointer;font-family:inherit;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar link</button>
+            <a href="#" data-share="email" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Email</a>
+            <a href="#" data-share="whatsapp" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3.2A12.72 12.72 0 0 0 5.15 22.5L3.4 28.8l6.45-1.69A12.72 12.72 0 1 0 16.04 3.2Zm0 2.3a10.43 10.43 0 0 1 8.89 15.9 10.42 10.42 0 0 1-13.94 3.55l-.46-.27-3.83 1 1.03-3.72-.3-.49a10.42 10.42 0 0 1 8.61-15.97Z"/></svg> WhatsApp</a>
+            <a href="#" data-share="telegram" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg> Telegram</a>
+            <a href="#" data-share="facebook" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</a>
+            <a href="#" data-share="linkedin" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
           </div>
         </div>
       </div>
-      
-      ype html>
-<html lang="pt-BR">
-  <head>
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="stylesheet" href="../assets/css/fonts.css?v=20260623-2">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Trabalhei sem registro: o que observar? | GK Ribeiro</title>
-    <meta name="description" content="Entenda pontos importantes sobre trabalho sem registro, vínculo empregatício, documentos úteis e análise trabalhista. Conteúdo informativo.">
-    <link rel="canonical" href="https://gkribeiro.adv.br/blog/trabalhei-sem-registro.html">
-    <meta property="og:type" content="article">
-    <meta property="og:locale" content="pt_BR">
-    <meta property="og:title" content="Trabalhei sem registro: o que observar?">
-    <meta property="og:description" content="Elementos que podem indicar vínculo de emprego e documentos úteis para análise.">
-    <meta property="og:url" content="https://gkribeiro.adv.br/blog/trabalhei-sem-registro.html">
-    <meta property="og:image" content="https://gkribeiro.adv.br/assets/img/gk-ribeiro-og.webp">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Trabalhei sem registro: o que observar? | GK Ribeiro">
-    <meta name="twitter:description" content="Entenda pontos importantes sobre trabalho sem registro, vínculo empregatício, documentos úteis e análise trabalhista. Conteúdo informativo.">
-    <meta name="twitter:image" content="https://gkribeiro.adv.br/assets/img/gk-ribeiro-og.webp">
-    <meta name="theme-color" content="#083f43">
-    <link rel="icon" href="../assets/logo/logo-gk-simples.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="../assets/logo/apple-touch-icon.png">
-    <link rel="stylesheet" href="../assets/css/forge.css?v=20260626-3">
-    
-    <script type="application/ld+json">
-{
-      "@context": "https://schema.org",
-      "@graph": [
-            {
-                  "@type": "Article",
-                  "headline": "Trabalhei sem registro: o que observar?",
-                  "description": "Elementos que podem indicar vínculo de emprego e documentos úteis para análise.",
-                  "datePublished": "2026-06-17",
-                  "dateModified": "2026-06-17",
-                  "author": {
-                        "@type": "Person",
-                        "name": "Greice Kelli Ribeiro",
-                        "jobTitle": "Advogada",
-                        "identifier": "OAB/SP 387.933",
-                        "telephone": "+55 11 95731-4252",
-                        "email": "atendimento@gkribeiro.adv.br",
-                        "image": "https://gkribeiro.adv.br/assets/img/greice-ribeiro-retrato-novo.webp",
-                        "address": {
-                              "@type": "PostalAddress",
-                              "streetAddress": "Rua Inácio Monteiro, 2220, Jardim São Paulo",
-                              "addressLocality": "São Paulo",
-                              "addressRegion": "SP",
-                              "postalCode": "08490-000",
-                              "addressCountry": "BR"
-                        }
-                  },
-                  "publisher": {
-                        "@type": "Organization",
-                        "name": "GK Ribeiro Advocacia Trabalhista e Previdenciária",
-                        "url": "https://gkribeiro.adv.br/",
-                        "logo": {
-                              "@type": "ImageObject",
-                              "url": "https://gkribeiro.adv.br/assets/logo/logo-gk-completa.svg"
-                        }
-                  },
-                  "mainEntityOfPage": "https://gkribeiro.adv.br/blog/trabalhei-sem-registro.html",
-                  "image": "https://gkribeiro.adv.br/assets/img/gk-ribeiro-og.webp"
-            },
-            {
-                  "@type": "FAQPage",
-                  "mainEntity": [
-                        {
-                              "@type": "Question",
-                              "name": "Trabalhar sem registro sempre gera vínculo de emprego?",
-                              "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "A existência de vínculo depende da análise de elementos como pessoalidade, habitualidade, subordinação e remuneração, além das provas disponíveis."
-                              }
-                        },
-                        {
-                              "@type": "Question",
-                              "name": "Quais provas podem ajudar?",
-                              "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "Mensagens, comprovantes de pagamento, escalas, e-mails, fotos, crachás, uniformes, testemunhas e documentos da rotina de trabalho podem auxiliar a análise."
-                              }
-                        }
-                  ]
-            }
-      ]
-}
-    </script>
-  </head>
-  <body>
-<header class="masthead">
-  <div class="wrap">
-    <div class="masthead-row">
-      <div class="brand"><a href="../index.html" aria-label="GK Ribeiro Advocacia Trabalhista e Previdenciária"><svg width="135" height="105" viewBox="0 0 195 152" role="img" style="display:block;height:105px;width:auto;"><title>GK Ribeiro</title><desc>Simbolo GK</desc><path fill="var(--logo-primary)" stroke="var(--logo-stroke)" stroke-width="14" stroke-linejoin="round" paint-order="stroke fill" transform="scale(0.169271 0.169271)" d="M564.197 221.82C565.194 223.228 564.779 345.443 564.758 354.306C546.583 354.164 528.407 354.163 510.232 354.302L510.182 290.851C483.751 297.629 450.325 307.897 424.146 313.079C424.969 345.338 423.624 379.104 424.215 411.487C424.483 426.142 423.366 444.906 425.257 459.048C430.516 498.374 450.009 533.559 477.551 561.734C488.216 572.644 498.238 580.379 510.205 589.537L510.212 453.563C494.514 453.146 475.516 453.725 459.69 453.84L459.708 400.873C472.221 400.372 486.286 400.657 498.958 400.656L564.753 400.553C564.902 410.634 564.787 421.021 564.798 431.126L564.803 682.866C520.868 665.545 472.66 634.351 439.446 600.991C401.632 563.011 375.028 514.131 370.154 460.202C369.303 450.788 369.55 440.945 369.559 431.5L369.607 390.737L369.584 272.036C410.37 262.095 451.199 250.652 491.933 240.351C515.753 234.327 540.209 226.901 564.197 221.82Z"/><path fill="var(--logo-secondary)" stroke="var(--logo-stroke)" stroke-width="14" stroke-linejoin="round" paint-order="stroke fill" transform="scale(0.169271 0.169271)" d="M594.384 222.513C610.557 225.254 632.945 231.824 649.488 236.005C649.873 254.369 649.574 273.718 649.579 292.141L649.63 396.086C677.662 378.577 705.431 360.168 733.41 342.833C732.575 315.893 733.275 285.217 733.293 258.006C750.353 261.73 771.76 267.292 788.626 272.172C788.953 304.927 788.685 338.312 788.609 371.101C770.704 382.878 751.812 393.514 733.977 405.218C735.931 406.56 738.041 408.475 739.842 410.062C756.129 424.407 773.334 438.113 789.31 452.779C789.184 461.986 786.533 478.668 784.337 487.579C766.318 560.679 715.306 614.678 652.794 653.119C634.13 664.479 614.635 674.413 594.474 682.835C594.205 662.556 594.188 642.275 594.423 621.996C602.188 617.201 613.125 612.819 621.574 607.619C676.088 574.071 715.573 535.555 730.864 472.135L685.955 435.673C673.867 443.535 661.701 451.277 649.459 458.897C649.926 469.137 649.519 482.857 649.517 493.319L649.507 560.237C636.252 573.286 611.07 587.941 594.506 596.182C594.878 561.307 594.311 525.184 594.329 490.16L594.384 222.513Z"/></svg></a></div>
-      <nav class="primary-nav"><a href="../index.html">Início</a><a href="../blog.html" style="color:var(--accent);">Blog</a><a href="../trabalhista.html">Trabalhista</a><a href="../previdenciario.html">Previdenciário</a><a href="../sobre.html">Sobre</a><a href="../localizacao.html">Localização</a><a href="../contato.html">Contato</a><button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema"><span data-theme-label>🌙</span></button><button class="nav-mobile-toggle" data-nav-toggle aria-label="Abrir menu" style="display:none;">☰ Menu</button></nav>
-    </div>
-    <div class="masthead-meta"><span>Dra. Greice Kelli Ribeiro</span><span class="ornament">s</span><span>OAB/SP 387.933</span><span class="ornament">s</span><span>Atendimento presencial e online</span><span class="spacer"></span><span>Sao Paulo - SP</span></div><div class="progress-line" id="progress-line"></div>
-  </div>
-</header>
-<img src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" alt="" style="display:none;" /><main id="conteudo">
-      <article>
-        <section class="page-hero">
-          <div class="container">
-            <nav class="breadcrumb" aria-label="Caminho">
-              <a href="../index.html">Início</a>
-              <span>/</span>
-              <a href="../blog.html">Blog</a>
-              <span>/</span>
-              <span>Trabalho sem registro</span>
-            </nav>
-            <span class="eyebrow">Direito Trabalhista</span>
-            <h1>Trabalhei sem registro: o que observar?</h1>
-            <p>O trabalho sem registro pode gerar dúvidas sobre vínculo empregatício, verbas trabalhistas, FGTS e documentos que ajudam a demonstrar a rotina de trabalho.</p>
-            <div class="article-meta">
-              <span>Publicado em 17/06/2026</span>
-              <span>Leitura informativa</span>
-            </div>
-          </div>
-        </section>
+      <p class="note" style="font-size:14px;color:var(--ink-3);font-style:italic;margin-top:32px;">Este conteúdo é informativo e não substitui análise jurídica individualizada. Responsável técnica: Dra. Greice Kelli Ribeiro.</p>
+    </article>
+  </div></div>
+</section>
+</main>
 
-        <section class="section">
-          <div class="container content-grid">
-            <div class="article-body">
-              <p class="lead">Nem todo trabalho informal tem a mesma configuração jurídica. Para avaliar a possibilidade de reconhecimento de vínculo, é necessário observar como a atividade era prestada na prática.</p>
+<footer class="colophon"><div class="wrap"><div class="colophon-grid"><div class="col-block"><h4>GK Ribeiro Advocacia</h4><p><em>Dra. Greice Kelli Ribeiro</em> · OAB/SP 387.933<br>Advocacia Trabalhista e Previdenciária.</p></div><div class="col-block"><h4>Endereços</h4><p><em>Zona Leste:</em> Rua Inácio Monteiro, 2220, Jardim São Paulo<br><em>Centro:</em> Rua Líbero Badaró, 101, 12 andar</p></div><div class="col-block"><h4>Contato</h4><ul><li><a href="tel:+5511957314252">(11) 95731-4252</a></li><li><a href="mailto:atendimento@gkribeiro.adv.br">atendimento@gkribeiro.adv.br</a></li><li><a href="https://www.instagram.com/gkribeiro.adv/" target="_blank" rel="noopener">@gkribeiro.adv</a></li></ul></div></div><div class="colophon-foot"><span>GK Ribeiro Advocacia Trabalhista e Previdenciária</span><span class="colophon-mark">— São Paulo - SP —</span><span>© <span data-year></span> · conteúdo informativo</span></div></div></footer>
 
-              <h2>Elementos que costumam ser analisados</h2>
-              <p>A análise pode considerar pessoalidade, habitualidade, subordinação e remuneração. Em linguagem simples: quem prestava o serviço, com que frequência, sob quais ordens e mediante qual pagamento.</p>
-
-              <h2>Documentos e provas que podem ajudar</h2>
-              <ul>
-                <li>Mensagens com superiores, clientes ou equipe.</li>
-                <li>Comprovantes de pagamento, PIX, recibos ou depósitos.</li>
-                <li>Escalas, controles de ponto, listas de presença e e-mails.</li>
-                <li>Fotos de uniforme, crachá, local de trabalho ou materiais fornecidos.</li>
-                <li>Informações de testemunhas e datas aproximadas de início e fim do trabalho.</li>
-              </ul>
-
-              <h2>Quais direitos podem ser discutidos?</h2>
-              <p>Quando o vínculo é reconhecido, podem ser discutidas verbas relacionadas ao contrato, como registro em carteira, férias, 13º salário, FGTS, horas extras e verbas rescisórias, conforme o caso.</p>
-
-              <h2>Por que organizar a linha do tempo?</h2>
-              <p>Anotar datas de admissão, função, rotina, horário, forma de pagamento e data de saída ajuda a entender a situação com mais clareza e evita perda de informações importantes.</p>
-
-              <div class="faq">
-                <details>
-                  <summary>Trabalhei como PJ, mas tinha rotina fixa. Pode ser vínculo?</summary>
-                  <p>Pode haver discussão em algumas situações, mas é necessário analisar a prática do trabalho, documentos, subordinação, autonomia e demais elementos do caso.</p>
-                </details>
-                <details>
-                  <summary>Sem carteira assinada, ainda posso reunir provas?</summary>
-                  <p>Sim. Mensagens, comprovantes, registros de rotina e testemunhas podem ajudar na análise, desde que avaliados com cuidado.</p>
-                </details>
-                <details>
-                  <summary>Existe prazo para buscar direitos trabalhistas?</summary>
-                  <p>Demandas trabalhistas têm prazos relevantes. Por isso, é recomendável buscar orientação assim que possível para avaliar a situação.</p>
-                </details>
-              </div>
-
-              <div class="share-block" style="margin-top:40px;padding:20px;border:1px solid var(--rule);background:var(--bg-2);position:relative;">
-  <button id="share-btn" style="display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--bg);border:none;padding:8px 20px;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-    Compartilhar
-  </button>
-  <span id="share-msg" style="display:none;margin-left:12px;font-size:13px;color:var(--accent);">Link copiado!</span>
-  <div id="share-menu" style="display:none;margin-top:16px;padding:16px;background:var(--bg);border:1px solid var(--rule);">
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px;">
-      <a href="#" data-share="copy" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar link</a>
-      <a href="mailto:?subject=Título<p class="note">Este conteúdo é informativobody=URL" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><a href="mailto:?subject='Título'📧 Emailbody='URL'" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:8px;font-size:13px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Email</a>
-      <a href="https://wa.me/?text=Título+URL" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><a href="https://wa.me/?text=Título+URL" target="_blank" rel="noopener" data-share-link style="display:flex;align-items:center;gap:6px;padding:8px;font-size:13px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3.2A12.72 12.72 0 0 0 5.15 22.5L3.4 28.8l6.45-1.69A12.72 12.72 0 1 0 16.04 3.2Zm0 2.3a10.43 10.43 0 0 1 8.89 15.9 10.42 10.42 0 0 1-13.94 3.55l-.46-.27-3.83 1 1.03-3.72-.3-.49a10.42 10.42 0 0 1 8.61-15.97Z"/></svg> WhatsApp</a>
-      <a href="https://telegram.me/share/url?url=URL<p class="note">Este conteúdo é informativotext=Título" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><a href="https://telegram.me/share/url?url=URL✈️ Telegramtext=Título" target="_blank" rel="noopener" data-share-link style="display:flex;align-items:center;gap:6px;padding:8px;font-size:13px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg> Telegram</a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=URL" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><a href="https://www.facebook.com/sharer/sharer.php?u=URL" target="_blank" rel="noopener" data-share-link style="display:flex;align-items:center;gap:6px;padding:8px;font-size:13px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</a>
-      <a href="https://www.linkedin.com/shareArticle?mini=true<p class="note">Este conteúdo é informativourl=URL<p class="note">Este conteúdo é informativotitle=Título" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><a href="https://www.linkedin.com/shareArticle?mini=true🔗 LinkedInurl=URL🔗 LinkedIntitle=Título" target="_blank" rel="noopener" data-share-link style="display:flex;align-items:center;gap:6px;padding:8px;font-size:13px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
-      <a href="https://www.instagram.com/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><a href="https://www.instagram.com/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:8px;font-size:13px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg> Instagram</a>
-      <a href="https://www.threads.net/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><a href="https://www.threads.net/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:8px;font-size:13px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.14 10.56c-.68-.34-1.16-.78-1.16-1.55 0-.66.28-1.14.76-1.48.5-.37 1.16-.5 1.84-.46.89.06 1.57.35 2.09.78.52.43.8.95.8.95l1.72-1.12s-.58-1.07-1.6-1.72c-.79-.5-1.81-.83-3.06-.88-1.26-.05-2.4.16-3.37.62-.74.36-1.36.87-1.8 1.52-.5.75-.72 1.63-.7 2.58.02.95.22 1.74.67 2.44.94 1.47 2.37 2.07 3.67 2.64.98.39 1.87.72 2.48 1.13.43.3.62.62.62 1.05 0 .43-.19.82-.57 1.14-.47.39-1.28.62-2.35.57-1.56-.06-2.6-.72-3.19-1.49-.37-.49-.6-1.02-.7-1.57l-2.34.3c.12.91.46 1.74 1 2.44.82 1.08 2.08 1.88 3.83 2.19.79.14 1.6.16 2.38.04 1.09-.17 2.07-.55 2.87-1.12.66-.47 1.18-1.06 1.52-1.74.34-.68.52-1.43.5-2.21-.02-.63-.18-1.21-.48-1.72-.42-.72-1.05-1.25-1.78-1.64-.7-.37-1.51-.66-2.22-.97-.67-.28-1.2-.56-1.54-.88-.28-.27-.4-.57-.4-.95 0-.38.14-.71.42-.96.32-.27.76-.4 1.26-.4.48 0 1.03.12 1.5.4.54.33.86.81 1.02 1.39l2.3-.23c-.2-1.34-.84-2.29-1.83-2.97-.81-.55-1.85-.87-3.04-.95-1.35-.09-2.58.17-3.66.69-.87.43-1.6 1.02-2.16 1.77-.5.66-.82 1.37-.97 2.14-.12.59-.15 1.17-.1 1.72.06.9.32 1.68.76 2.37.82 1.29 2.08 1.9 3.46 2.44.97.33 1.83.66 2.4 1.03.34.23.53.48.53.85 0 .33-.14.62-.43.85-.34.27-.8.42-1.36.42-.58 0-1.05-.14-1.38-.32-.52-.3-.88-.76-1.1-1.4l-2.29.53c.4 1.27 1.1 2.24 2.1 2.94.8.57 1.78.94 2.91 1.08.84.1 1.7.07 2.52-.12 1.1-.25 2.06-.72 2.85-1.37.76-.63 1.29-1.4 1.6-2.3.27-.77.38-1.58.34-2.4-.04-.72-.21-1.4-.5-2.01-.38-.82-.98-1.5-1.78-2.01zm-5.04 1.14c.07.38.21.73.41 1.04.5.78 1.3 1.24 2.18 1.6.06.02.1.06.14.1.11.32.15.66.11 1.01-.08.72-.42 1.3-.97 1.7-.45.32-1.01.5-1.65.54-1.25.08-2.31-.26-3.02-1.12-.42-.5-.68-1.14-.78-1.93-.07-.6.06-1.15.35-1.62.46-.73 1.2-1.2 2.17-1.34.65-.1 1.27-.03 1.83.2.33.13.63.30.89.5.02.02.03.06.04.08zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg> Threads</a>
-      <a href="https://www.reddit.com/submit?url=URL<p class="note">Este conteúdo é informativotitle=Título" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><a href="https://www.reddit.com/submit?url=URL<a href="https://www.reddit.com/submit?url=URLReddittitle=Título" data-share-link target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:8px;font-size:13px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0z"/><circle cx="8.5" cy="13.5" r="1.5"/><circle cx="15.5" cy="13.5" r="1.5"/><path d="M12 15c-1.5 0-2.5.5-2.5.5s1 1 2.5 1 2.5-1 2.5-1-1-.5-2.5-.5z"/></svg> Reddit</a>title=Título" target="_blank" rel="noopener" data-share-link style="display:flex;align-items:center;gap:6px;padding:8px;font-size:13px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.77 8.23c.89 0 1.62.73 1.62 1.62 0 .62-.35 1.16-.86 1.41.07.33.11.66.11 1 0 3.29-3.3 5.97-7.37 5.97S4.36 15.55 4.36 12.26c0-.34.04-.67.11-1-.5-.25-.86-.79-.86-1.41 0-.89.73-1.62 1.62-1.62.47 0 .89.2 1.19.52 1.15-.84 2.67-1.37 4.33-1.42l.92-3.89c.02-.09.1-.15.19-.16l3.08-.34c.17.36.53.62.96.62.58 0 1.05-.47 1.05-1.05 0-.58-.47-1.05-1.05-1.05-.43 0-.8.26-.96.62l-3.08.34a.2.2 0 0 0-.15.1l-.92 3.89c-1.66.05-3.17.58-4.33 1.42a1.67 1.67 0 0 0-1.19-.52c-.89 0-1.62.73-1.62 1.62 0 .62.35 1.16.85 1.41-.07.33-.11.66-.11 1 0 3.29 3.3 5.97 7.37 5.97s7.37-2.68 7.37-5.97c0-.34-.04-.67-.11-1 .5-.25.86-.79.86-1.41z"/></svg> Reddit</a>
-    </div>
-  </div>
-</div>
-<script src="../assets/js/share.js?v=20260626-3"></script>
-<p class="note">Este conteúdo é informativo e não substitui análise jurídica individualizada.</p>
-            </div>
-
-            <aside class="sidebar">
-              <div class="sidebar-box">
-                <h2>Trabalho sem registro?</h2>
-                <p>Informe período, função, forma de pagamento e documentos disponíveis para verificar a forma de atendimento.</p>
-                <div class="section-actions">
-                  <a class="btn btn-primary" href="https://wa.me/5511957314252?text=Ol%C3%A1%2C%20li%20o%20artigo%20sobre%20trabalho%20sem%20registro%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20atendimento%20trabalhista.">WhatsApp</a>
-                </div>
-              </div>
-              <div class="sidebar-box">
-                <h3>Leia também</h3>
-                <ul>
-                  <li><a href="../trabalhista.html">Direito Trabalhista</a></li>
-                  <li><a href="fui-demitido-direitos.html">Fui demitido: quais direitos?</a></li>
-                  <li><a href="../contato.html">Contato</a></li>
-                </ul>
-              </div>
-            </aside>
-          </div>
-        </section>
-      </article>
-    </main>
-
-    <footer class="colophon"><div class="wrap"><div class="colophon-grid"><div class="col-block"><h4>GK Ribeiro Advocacia</h4><p><em>Dra. Greice Kelli Ribeiro</em> · OAB/SP 387.933<br>Advocacia Trabalhista e Previdenciaria.</p></div><div class="col-block"><h4>Enderecos</h4><p><em>Zona Leste:</em> Rua Inácio Monteiro, 2220, Jardim Sao Paulo<br><em>Centro:</em> Rua Líbero Badaró, 101, 12 andar</p></div><div class="col-block"><h4>Contato</h4><ul><li><a href="tel:+5511957314252">(11) 95731-4252</a></li><li><a href="mailto:atendimento@gkribeiro.adv.br">atendimento@gkribeiro.adv.br</a></li><li><a href="https://www.instagram.com/gkribeiro.adv/" target="_blank" rel="noopener">@gkribeiro.adv</a></li></ul></div></div><div class="colophon-foot"><span>GK Ribeiro Advocacia Trabalhista e Previdenciária</span><span class="colophon-mark">— São Paulo - SP —</span><span>© <span data-year></span> . conteudo informativo</span></div></div></footer>
 <div id="cookie-bar" style="position:fixed;bottom:0;left:0;right:0;background:var(--bg-2);border-top:1px solid var(--rule);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;z-index:300;font-size:14px;color:var(--ink-2);flex-wrap:wrap;"><span>Este site usa cookies para analises de visita (Google Analytics). Ao continuar, voce concorda com nossa <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">politica de cookies</a>.</span><button id="cookie-accept" style="background:var(--accent);color:var(--bg);border:none;padding:8px 20px;cursor:pointer;font-size:13px;font-weight:500;white-space:nowrap;">Aceitar</button></div>
 <script>if(localStorage.getItem("gk-cookies-accepted")==="1"){document.getElementById("cookie-bar").style.display="none";}
-var cookieAccept=document.getElementById("cookie-accept");if(cookieAccept){cookieAccept.addEventListener("click",window.acceptCookies);}</script>
-<a class="floating-whatsapp" href="https://wa.me/5511957314252?text=Ola%2C%20vim%20pelo%20site%20da%20GK%20Ribeiro%20Advocacia%20e%20gostaria%20de%20informacoes%20sobre%20atendimento." aria-label="Chamar no WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3.2A12.72 12.72 0 0 0 5.15 22.5L3.4 28.8l6.45-1.69A12.72 12.72 0 1 0 16.04 3.2Zm0 2.3a10.43 10.43 0 0 1 8.89 15.9 10.42 10.42 0 0 1-13.94 3.55l-.46-.27-3.83 1 1.03-3.72-.3-.49a10.42 10.42 0 0 1 8.61-15.97Zm-4.5 5.65c-.23 0-.6.09-.91.43-.31.34-1.2 1.17-1.2 2.86s1.23 3.32 1.4 3.55c.17.23 2.38 3.8 5.86 5.17 2.9 1.14 3.49.91 4.12.86.63-.06 2.03-.83 2.32-1.63.29-.8.29-1.49.2-1.63-.09-.14-.31-.23-.66-.4-.34-.17-2.03-1-2.35-1.12-.31-.11-.54-.17-.77.18-.23.34-.89 1.12-1.09 1.34-.2.23-.4.26-.74.09-.34-.17-1.45-.54-2.76-1.7-1.02-.91-1.71-2.03-1.91-2.38-.2-.34-.02-.53.15-.7.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.09-.17-.77-1.86-1.06-2.55-.28-.67-.57-.58-.77-.59h-.66Z"/></svg></a>
+var cookieAccept=document.getElementById('cookie-accept');if(cookieAccept){cookieAccept.addEventListener('click',window.acceptCookies);}</script>
+
+<a class="floating-whatsapp" href="https://wa.me/5511957314252?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20GK%20Ribeiro%20Advocacia%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20atendimento." aria-label="Chamar no WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3.2A12.72 12.72 0 0 0 5.15 22.5L3.4 28.8l6.45-1.69A12.72 12.72 0 1 0 16.04 3.2Zm0 2.3a10.43 10.43 0 0 1 8.89 15.9 10.42 10.42 0 0 1-13.94 3.55l-.46-.27-3.83 1 1.03-3.72-.3-.49a10.42 10.42 0 0 1 8.61-15.97Zm-4.5 5.65c-.23 0-.6.09-.91.43-.31.34-1.2 1.17-1.2 2.86s1.23 3.32 1.4 3.55c.17.23 2.38 3.8 5.86 5.17 2.9 1.14 3.49.91 4.12.86.63-.06 2.03-.83 2.32-1.63.29-.8.29-1.49.2-1.63-.09-.14-.31-.23-.66-.4-.34-.17-2.03-1-2.35-1.12-.31-.11-.54-.17-.77.18-.23.34-.89 1.12-1.09 1.34-.2.23-.4.26-.74.09-.34-.17-1.45-.54-2.76-1.7-1.02-.91-1.71-2.03-1.91-2.38-.2-.34-.02-.53.15-.7.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.09-.17-.77-1.86-1.06-2.55-.28-.67-.57-.58-.77-.59h-.66Z"/></svg></a>
+
+<script src="../assets/js/share.js?v=20260630-1"></script>
 <script>
-(function(){'use strict';const root=document.documentElement;const toggle=document.getElementById('theme-toggle');if(toggle){const label=toggle.querySelector('[data-theme-label]');const saved=localStorage.getItem('gk-theme');if(saved){root.setAttribute('data-theme',saved);label.textContent=saved==='dim'?'☀':'🌙';}
-toggle.addEventListener('click',()=>{const cur=root.getAttribute('data-theme');const next=cur==='dim'?'light':'dim';root.setAttribute('data-theme',next);label.textContent=next==='dim'?'☀':'🌙';localStorage.setItem('gk-theme',next);});}
-const progressLine=document.getElementById('progress-line');if(progressLine){function updateProgress(){const scrollTop=window.scrollY;const docHeight=document.documentElement.scrollHeight-window.innerHeight;progressLine.style.width=(docHeight>0?Math.min(1,scrollTop/docHeight)*100:0)+'%';}
-window.addEventListener('scroll',updateProgress,{passive:true});updateProgress();}
-document.querySelectorAll('.faq-question').forEach(q=>{q.addEventListener('click',()=>q.parentElement.classList.toggle('open'));q.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();q.click();}});});
-document.querySelectorAll('[data-year]').forEach(el=>{el.textContent=new Date().getFullYear();});
-const navToggle=document.querySelector('[data-nav-toggle]');if(navToggle){navToggle.addEventListener('click',function(){const nav=this.closest('.primary-nav');nav.classList.toggle('open');this.textContent=nav.classList.contains('open')?'X Fechar':'Menu';});}})();
+(function() {
+  'use strict';
+  const root = document.documentElement;
+  const toggle = document.getElementById('theme-toggle');
+  if (toggle) {
+    const label = toggle.querySelector('[data-theme-label]');
+    const saved = localStorage.getItem('gk-theme');
+    if (saved) { root.setAttribute('data-theme', saved); label.textContent = saved === 'dim' ? '☀' : '🌙'; }
+    toggle.addEventListener('click', () => {
+      const cur = root.getAttribute('data-theme');
+      const next = cur === 'dim' ? 'light' : 'dim';
+      root.setAttribute('data-theme', next);
+      label.textContent = next === 'dim' ? '☀' : '🌙';
+      localStorage.setItem('gk-theme', next);
+    });
+  }
+  const progressLine = document.getElementById('progress-line');
+  if (progressLine) {
+    function updateProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      progressLine.style.width = (docHeight > 0 ? Math.min(1, scrollTop / docHeight) * 100 : 0) + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); q.click(); } });
+  });
+  document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
+  var cookieAccept=document.getElementById('cookie-accept');if(cookieAccept){cookieAccept.addEventListener('click',window.acceptCookies);}
+})();
 </script>
 </body>
 </html>
