@@ -31,7 +31,21 @@ if(localStorage.getItem('gk-cookies-accepted')==='1'){loadGA();}
 window.acceptCookies=function(){localStorage.setItem('gk-cookies-accepted','1');document.getElementById('cookie-bar').style.display='none';loadGA();};
 })();
 </script>
-<style>.artigos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}@media(max-width:900px){.artigos-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:480px){.artigos-grid{grid-template-columns:1fr}}.artigo-card{border:1px solid var(--rule);padding:20px;transition:all .2s;text-align:left}.artigo-card:hover{background:var(--bg-2);border-color:var(--accent)}.artigo-card h4{font-family:var(--serif-display);font-weight:500;font-size:16px;line-height:1.3;margin-bottom:6px;color:var(--ink)}.artigo-card p{font-size:12px;color:var(--ink-3);font-style:italic}</style>
+<style>
+.blog-list{list-style:none;padding:0;margin:24px 0}
+.blog-item{display:flex;align-items:baseline;gap:10px;padding:12px 0;border-bottom:1px solid var(--rule-soft);text-decoration:none;transition:background .15s}
+.blog-item:hover{background:var(--bg-2);padding-left:8px;padding-right:8px}
+.blog-item-title{font-family:var(--serif-display);font-weight:500;font-size:16px;line-height:1.3;color:var(--ink);flex:1}
+.blog-item:hover .blog-item-title{color:var(--accent)}
+.blog-tag{display:inline-block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;padding:2px 8px;border-radius:3px;white-space:nowrap}
+.blog-tag-trab{background:var(--accent);color:var(--bg)}
+.blog-tag-prev{background:var(--logo-secondary);color:var(--bg)}
+.blog-pag{display:flex;justify-content:center;gap:8px;margin:24px 0}
+.blog-pag button{background:var(--bg-2);border:1px solid var(--rule);color:var(--ink);padding:6px 14px;font-size:13px;cursor:pointer;font-family:inherit;border-radius:4px}
+.blog-pag button:hover{background:var(--accent);color:var(--bg)}
+.blog-pag button:disabled{opacity:.4;cursor:default}
+.blog-pag button:disabled:hover{background:var(--bg-2);color:var(--ink)}
+</style>
 </head>
 <body>
 <header class="masthead">
@@ -62,17 +76,14 @@ window.acceptCookies=function(){localStorage.setItem('gk-cookies-accepted','1');
         <div class="hero-eyebrow"><span class="hero-label">Blog Jurídico</span><span class="hero-marker">GK Ribeiro Advocacia</span></div>
         <h1 class="hero-title" style="font-size:clamp(36px,5vw,64px);margin-bottom:24px;">Artigos sobre</h1><h2 style="font-family:var(--serif-display);font-weight:500;font-size:clamp(22px,2.8vw,34px);letter-spacing:-0.015em;line-height:1.12;margin-bottom:24px;color:var(--accent);">Direito Trabalhista e Previdenciário.</h2>
         <p class="hero-deck" style="margin-bottom:0;">Informações e orientações sobre direitos trabalhistas, benefícios do INSS, aposentadoria e mais. Conteúdo atualizado pela Dra. Greice Kelli Ribeiro.</p>
-        <div class="ultimos-posts" style="margin-top:24px;padding:16px 20px;background:var(--bg-2);border:1px solid var(--rule);"><span style="display:block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:10px;">Últimos posts</span><div style="display:flex;flex-wrap:wrap;gap:8px;"><a href="blog/formas-acessar-justica-trabalho-sp.html" style="font-size:14px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;">5 formas de acessar a Justiça do Trabalho em SP</a><span style="color:var(--ink-3);font-size:12px;">·</span><a href="blog/acao-trabalhista-trt2-guia.html" style="font-size:14px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;">Como iniciar sua ação trabalhista no TRT-2</a><span style="color:var(--ink-3);font-size:12px;">·</span><a href="blog/stj-terco-ferias-salario-maternidade.html" style="font-size:14px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;">STJ cancela temas sobre terco de ferias e salario-maternidade</a></div></div>
+        <div class="ultimos-posts" style="margin-top:24px;padding:16px 20px;background:var(--bg-2);border:1px solid var(--rule);"><span style="display:block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:10px;">Último post</span><div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;"><span class="blog-tag blog-tag-trab">Trabalhista</span><a href="blog/stj-terco-ferias-salario-maternidade.html" style="font-size:15px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;">STJ cancela temas sobre terço de férias e salário-maternidade</a></div></div>
       </div>
       <aside class="hero-aside">
         <div class="aside-head"><span>Categorias</span></div>
         <ul class="aside-list">
-          <li><span class="aside-title">Rescisão e verbas</span><span class="aside-desc">Demissão, FGTS, aviso prévio</span></li>
-          <li><span class="aside-title">Vínculo e registro</span><span class="aside-desc">Sem registro, PJ, pejotização</span></li>
-          <li><span class="aside-title">Estabilidade da gestante</span><span class="aside-desc">Direitos, indenização, novo emprego</span></li>
-          <li><span class="aside-title">Jornada e periculosidade</span><span class="aside-desc">Horas extras, adicional, frentista</span></li>
-          <li><span class="aside-title">Acidente e saúde</span><span class="aside-desc">Acidente de trabalho, jornada exaustiva</span></li>
-          <li><span class="aside-title">INSS e aposentadoria</span><span class="aside-desc">BPC/LOAS, benefício negado</span></li>
+          <li><span class="aside-title">Trabalhista</span><span class="aside-desc">Rescisão, FGTS, vínculo, horas extras</span></li>
+          <li><span class="aside-title">Previdenciário</span><span class="aside-desc">INSS, BPC/LOAS, aposentadoria</span></li>
+          <li><span class="aside-title">Jurisprudência</span><span class="aside-desc">STJ, STF, TRT-2</span></li>
         </ul>
         <div class="aside-foot">Atualizado em junho de 2026</div>
       </aside>
@@ -85,38 +96,35 @@ window.acceptCookies=function(){localStorage.setItem('gk-cookies-accepted','1');
     <div class="chapter-layout">
       <aside class="chapter-toc">
         <div class="toc-section"><div class="toc-label">Nesta página</div><ul class="toc-list">
-          <li><a href="#artigos-trabalhistas">§ 1. Artigos Trabalhistas</a></li>
-          <li><a href="#artigos-previdenciarios">§ 2. Artigos Previdenciários</a></li>
+          <li><a href="#artigos">Todos os artigos</a></li>
         </ul></div>
         <div class="toc-section"><div class="toc-label">Links rápidos</div><ul class="toc-list">
           <li><a href="index.html">Início</a></li>
           <li><a href="trabalhista.html">Trabalhista</a></li>
           <li><a href="previdenciario.html">Previdenciário</a></li>
           <li><a href="sobre.html">Sobre</a></li>
-          
           <li><a href="contato.html">Contato</a></li>
         </ul></div>
       </aside>
       <article class="chapter-body">
-        <h3><span class="num">§ 1.</span> Artigos Trabalhistas</h3>
-        <div class="artigos-grid">
-          <a href="blog/fui-demitido-direitos.html" class="artigo-card"><h4>Fui demitido: quais direitos posso ter?</h4><p>Trabalhista</p></a>
-          <a href="blog/trabalhei-sem-registro.html" class="artigo-card"><h4>Trabalhei sem registro: o que observar?</h4><p>Trabalhista</p></a>
-          <a href="blog/gestante-novo-emprego-indenizacao.html" class="artigo-card"><h4>Gestante em novo emprego: estabilidade e indenização</h4><p>Trabalhista</p></a>
-          <a href="blog/pejotizacao-stf-processos-trt.html" class="artigo-card"><h4>Pejotização: STF libera processos nos TRTs</h4><p>Trabalhista</p></a>
-          <a href="blog/adicional-periculosidade-frentista.html" class="artigo-card"><h4>Adicional de periculosidade para frentista</h4><p>Trabalhista</p></a>
-          <a href="blog/dispensa-motorista-desproporcional.html" class="artigo-card"><h4>Dispensa de motorista desproporcional</h4><p>Trabalhista</p></a>
-          <a href="blog/jornada-exaustiva-acidente-trabalho.html" class="artigo-card"><h4>Jornada exaustiva e acidente de trabalho</h4><p>Trabalhista</p></a>
-          <a href="blog/porteiro-portaria-eletronica.html" class="artigo-card"><h4>Porteiro e portaria eletrônica</h4><p>Trabalhista</p></a>
-          <a href="blog/acao-trabalhista-trt2-guia.html" class="artigo-card"><h4>Como iniciar sua ação trabalhista no TRT-2</h4><p>Trabalhista</p></a>
-          <a href="blog/formas-acessar-justica-trabalho-sp.html" class="artigo-card"><h4>5 formas de acessar a Justiça do Trabalho em SP</h4><p>Trabalhista</p></a>
-          <a href="blog/stj-terco-ferias-salario-maternidade.html" class="artigo-card"><h4>STJ cancela temas sobre terço de férias e salário-maternidade</h4><p>Trabalhista</p></a>
-        </div>
-        <h3><span class="num">§ 2.</span> Artigos Previdenciários</h3>
-        <div class="artigos-grid">
-          <a href="blog/bpc-loas.html" class="artigo-card"><h4>Como funciona o BPC/LOAS e quem pode pedir?</h4><p>Previdenciário</p></a>
-          <a href="blog/inss-negou-beneficio.html" class="artigo-card"><h4>INSS negou meu benefício: o que fazer?</h4><p>Previdenciário</p></a>
-        </div>
+        <h3 id="artigos"><span class="num">§ 1.</span> Todos os artigos</h3>
+        <ul class="blog-list" id="blog-list">
+          <!-- Artigos inseridos via JS (data-blog-item) — ordem = mais novos primeiro -->
+          <li data-blog-item><a href="blog/stj-terco-ferias-salario-maternidade.html" class="blog-item"><span class="blog-item-title">STJ cancela temas sobre terço de férias e salário-maternidade</span><span class="blog-tag blog-tag-trab">Trabalhista</span></a></li>
+          <li data-blog-item><a href="blog/formas-acessar-justica-trabalho-sp.html" class="blog-item"><span class="blog-item-title">5 formas de acessar a Justiça do Trabalho em SP</span><span class="blog-tag blog-tag-trab">Trabalhista</span></a></li>
+          <li data-blog-item><a href="blog/acao-trabalhista-trt2-guia.html" class="blog-item"><span class="blog-item-title">Como iniciar sua ação trabalhista no TRT-2</span><span class="blog-tag blog-tag-trab">Trabalhista</span></a></li>
+          <li data-blog-item><a href="blog/porteiro-portaria-eletronica.html" class="blog-item"><span class="blog-item-title">Porteiro e portaria eletrônica</span><span class="blog-tag blog-tag-trab">Trabalhista</span></a></li>
+          <li data-blog-item><a href="blog/jornada-exaustiva-acidente-trabalho.html" class="blog-item"><span class="blog-item-title">Jornada exaustiva e acidente de trabalho</span><span class="blog-tag blog-tag-trab">Trabalhista</span></a></li>
+          <li data-blog-item><a href="blog/dispensa-motorista-desproporcional.html" class="blog-item"><span class="blog-item-title">Dispensa de motorista desproporcional</span><span class="blog-tag blog-tag-trab">Trabalhista</span></a></li>
+          <li data-blog-item><a href="blog/adicional-periculosidade-frentista.html" class="blog-item"><span class="blog-item-title">Adicional de periculosidade para frentista</span><span class="blog-tag blog-tag-trab">Trabalhista</span></a></li>
+          <li data-blog-item><a href="blog/pejotizacao-stf-processos-trt.html" class="blog-item"><span class="blog-item-title">Pejotização: STF libera processos nos TRTs</span><span class="blog-tag blog-tag-trab">Trabalhista</span></a></li>
+          <li data-blog-item><a href="blog/gestante-novo-emprego-indenizacao.html" class="blog-item"><span class="blog-item-title">Gestante em novo emprego: estabilidade e indenização</span><span class="blog-tag blog-tag-trab">Trabalhista</span></a></li>
+          <li data-blog-item><a href="blog/fui-demitido-direitos.html" class="blog-item"><span class="blog-item-title">Fui demitido: quais direitos posso ter?</span><span class="blog-tag blog-tag-trab">Trabalhista</span></a></li>
+          <li data-blog-item><a href="blog/trabalhei-sem-registro.html" class="blog-item"><span class="blog-item-title">Trabalhei sem registro: o que observar?</span><span class="blog-tag blog-tag-trab">Trabalhista</span></a></li>
+          <li data-blog-item><a href="blog/inss-negou-beneficio.html" class="blog-item"><span class="blog-item-title">INSS negou meu benefício: o que fazer?</span><span class="blog-tag blog-tag-prev">Previdenciário</span></a></li>
+          <li data-blog-item><a href="blog/bpc-loas.html" class="blog-item"><span class="blog-item-title">Como funciona o BPC/LOAS e quem pode pedir?</span><span class="blog-tag blog-tag-prev">Previdenciário</span></a></li>
+        </ul>
+        <div class="blog-pag" id="blog-pag"></div>
         <p style="font-size:14px;color:var(--ink-3);font-style:italic;margin-top:32px;">Este conteúdo é informativo e não substitui análise jurídica individualizada. Responsável técnica: Dra. Greice Kelli Ribeiro.</p>
       </article>
     </div>
@@ -126,15 +134,27 @@ window.acceptCookies=function(){localStorage.setItem('gk-cookies-accepted','1');
 <footer class="colophon"><div class="wrap"><div class="colophon-grid"><div class="col-block"><h4>GK Ribeiro Advocacia</h4><p><em>Dra. Greice Kelli Ribeiro</em> · OAB/SP 387.933<br>Advocacia Trabalhista e Previdenciária.</p></div><div class="col-block"><h4>Endereços</h4><p><em>Zona Leste:</em> Rua Inácio Monteiro, 2220, Jardim São Paulo<br><em>Centro:</em> Rua Líbero Badaró, 101, 12 andar</p></div><div class="col-block"><h4>Contato</h4><ul><li><a href="tel:+5511957314252">(11) 95731-4252</a></li><li><a href="mailto:atendimento@gkribeiro.adv.br">atendimento@gkribeiro.adv.br</a></li><li><a href="https://www.instagram.com/gkribeiro.adv/" target="_blank" rel="noopener">@gkribeiro.adv</a></li></ul></div></div><div class="colophon-foot"><span>GK Ribeiro Advocacia Trabalhista e Previdenciária</span><span class="colophon-mark">— São Paulo - SP —</span><span>© <span data-year></span> · conteúdo informativo</span></div></div></footer>
 <div id="cookie-bar" style="position:fixed;bottom:0;left:0;right:0;background:var(--bg-2);border-top:1px solid var(--rule);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;z-index:300;font-size:14px;color:var(--ink-2);flex-wrap:wrap;"><span>Este site usa cookies para analises de visita (Google Analytics). Ao continuar, voce concorda com nossa <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">politica de cookies</a>.</span><button id="cookie-accept" style="background:var(--accent);color:var(--bg);border:none;padding:8px 20px;cursor:pointer;font-size:13px;font-weight:500;white-space:nowrap;">Aceitar</button></div>
 <script>if(localStorage.getItem("gk-cookies-accepted")==="1"){document.getElementById("cookie-bar").style.display="none";}
-var cookieAccept=document.getElementById("cookie-accept");if(cookieAccept){cookieAccept.addEventListener("click",window.acceptCookies);}</script>
+var cookieAccept=document.getElementById('cookie-accept');if(cookieAccept){cookieAccept.addEventListener('click',window.acceptCookies);}</script>
 <a class="floating-whatsapp" href="https://wa.me/5511957314252?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20GK%20Ribeiro%20Advocacia%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20atendimento." aria-label="Chamar no WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3.2A12.72 12.72 0 0 0 5.15 22.5L3.4 28.8l6.45-1.69A12.72 12.72 0 1 0 16.04 3.2Zm0 2.3a10.43 10.43 0 0 1 8.89 15.9 10.42 10.42 0 0 1-13.94 3.55l-.46-.27-3.83 1 1.03-3.72-.3-.49a10.42 10.42 0 0 1 8.61-15.97Zm-4.5 5.65c-.23 0-.6.09-.91.43-.31.34-1.2 1.17-1.2 2.86s1.23 3.32 1.4 3.55c.17.23 2.38 3.8 5.86 5.17 2.9 1.14 3.49.91 4.12.86.63-.06 2.03-.83 2.32-1.63.29-.8.29-1.49.2-1.63-.09-.14-.31-.23-.66-.4-.34-.17-2.03-1-2.35-1.12-.31-.11-.54-.17-.77.18-.23.34-.89 1.12-1.09 1.34-.2.23-.4.26-.74.09-.34-.17-1.45-.54-2.76-1.7-1.02-.91-1.71-2.03-1.91-2.38-.2-.34-.02-.53.15-.7.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.09-.17-.77-1.86-1.06-2.55-.28-.67-.57-.58-.77-.59h-.66Z"/></svg></a>
 <script>
 (function(){'use strict';const root=document.documentElement;const toggle=document.getElementById('theme-toggle');if(toggle){const label=toggle.querySelector('[data-theme-label]');const saved=localStorage.getItem('gk-theme');if(saved){root.setAttribute('data-theme',saved);label.textContent=saved==='dim'?'☀':'🌙';}
 toggle.addEventListener('click',()=>{const cur=root.getAttribute('data-theme');const next=cur==='dim'?'light':'dim';root.setAttribute('data-theme',next);label.textContent=next==='dim'?'☀':'🌙';localStorage.setItem('gk-theme',next);});}
 const progressLine=document.getElementById('progress-line');if(progressLine){function updateProgress(){const scrollTop=window.scrollY;const docHeight=document.documentElement.scrollHeight-window.innerHeight;progressLine.style.width=(docHeight>0?Math.min(1,scrollTop/docHeight)*100:0)+'%';}
 window.addEventListener('scroll',updateProgress,{passive:true});updateProgress();}
-document.querySelectorAll('[data-year]').forEach(el=>{el.textContent=new Date().getFullYear();});})();
+document.querySelectorAll('[data-year]').forEach(el=>{el.textContent=new Date().getFullYear();});
+var navToggle=document.querySelector('[data-nav-toggle]');if(navToggle){navToggle.addEventListener('click',function(){var nav=this.closest('.primary-nav');nav.classList.toggle('open');this.textContent=nav.classList.contains('open')?'\u2715 Fechar':'\u2630 Menu';});}
 
-var navToggle=document.querySelector('[data-nav-toggle]');if(navToggle){navToggle.addEventListener('click',function(){var nav=this.closest('.primary-nav');nav.classList.toggle('open');this.textContent=nav.classList.contains('open')?'\u2715 Fechar':'\u2630 Menu';});}</script>
+/* Pagination: 20 items per page */
+var PER_PAGE=20;
+var items=document.querySelectorAll('[data-blog-item]');
+var totalPages=Math.ceil(items.length/PER_PAGE);
+var currentPage=0;
+var pagDiv=document.getElementById('blog-pag');
+function showPage(p){currentPage=p;items.forEach(function(item,i){item.style.display=(i>=p*PER_PAGE&&i<(p+1)*PER_PAGE)?'':'none';});renderPag();}
+function renderPag(){if(totalPages<=1){pagDiv.innerHTML='';return;}var html='';html+='<button onclick="showPage('+(currentPage-1)+')" '+(currentPage===0?'disabled':'')+'> Anteriores</button>';for(var i=0;i<totalPages;i++){html+='<button onclick="showPage('+i+')" '+(i===currentPage?'style="background:var(--accent);color:var(--bg)"':'')+'>'+(i+1)+'</button>';}html+='<button onclick="showPage('+(currentPage+1)+')" '+(currentPage===totalPages-1?'disabled':'')+'>Próximos</button>';pagDiv.innerHTML=html;}
+window.showPage=showPage;
+showPage(0);
+})();
+</script>
 </body>
 </html>

@@ -291,9 +291,11 @@ Todo artigo de blog deve incluir o bloco de compartilhamento ao final do artigo 
 
 Ao criar um novo artigo de blog, SEMPRE atualizar `blog.html`:
 
-1. **Lista da categoria**: adicionar `<a href="blog/NOVO-ARTIGO.html" class="artigo-card"><h4>TITULO_DO_ARTIGO</h4><p>Trabalhista</p></a>` (ou `<p>Previdenciário</p>`) na seção correspondente (§ 1 Trabalhistas ou § 2 Previdenciários)
-2. **Últimos posts**: atualizar a seção `.ultimos-posts` (linha 61) substituindo o post mais antigo pelo novo
-3. **Sitemap**: adicionar nova entrada `<url>` com `<loc>` e `<lastmod>` em `sitemap.xml` **E atualizar `<lastmod>` da página blog.html para a data de hoje**. Isso é OBRIGATÓRIO sempre que adicionar ou modificar qualquer página — o Google Search Console usa o `<lastmod>` para priorizar reindexação. Exemplo de entrada:
+1. **Lista unificada (blog-list)**: adicionar `<li data-blog-item><a href="blog/NOVO-ARTIGO.html" class="blog-item"><span class="blog-item-title">TITULO_DO_ARTIGO</span><span class="blog-tag blog-tag-trab">Trabalhista</span></a></li>` (ou `blog-tag-prev` para Previdenciário) **no TOPO da lista** (mais novos primeiro)
+2. **Último post**: atualizar a seção `.ultimos-posts` no hero com o novo artigo (apenas 1 post, o mais recente)
+3. **Tags**: usar `blog-tag-trab` (accent) para Trabalhista ou `blog-tag-prev` (gold) para Previdenciário
+4. **Paginação**: automática via JS (20 itens por página) — não é necessário criar páginas separadas
+5. **Sitemap**: adicionar nova entrada `<url>` com `<loc>` e `<lastmod>` em `sitemap.xml` **E atualizar `<lastmod>` da página blog.html para a data de hoje**. Isso é OBRIGATÓRIO sempre que adicionar ou modificar qualquer página — o Google Search Console usa o `<lastmod>` para priorizar reindexação. Exemplo de entrada:
    ```xml
    <url><loc>https://gkribeiro.adv.br/blog/novo-artigo.html</loc><lastmod>YYYY-MM-DD</lastmod></url>
    ```
