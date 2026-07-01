@@ -15,8 +15,36 @@ if(localStorage.getItem('gk-cookies-accepted')==='1'){loadGA();}
 window.acceptCookies=function(){localStorage.setItem('gk-cookies-accepted','1');document.getElementById('cookie-bar').style.display='none';loadGA();};
 })();
 </script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"ProfilePage",
+      "@id":"https://gkribeiro.adv.br/sobre.html#profilepage",
+      "url":"https://gkribeiro.adv.br/sobre.html",
+      "name":"Sobre Dra. Greice Kelli Ribeiro | GK Ribeiro Advocacia",
+      "inLanguage":"pt-BR",
+      "dateModified":"2026-06-30",
+      "about":{"@id":"https://gkribeiro.adv.br/sobre.html#greice-kelli-ribeiro"}
+    },
+    {
+      "@type":"Person",
+      "@id":"https://gkribeiro.adv.br/sobre.html#greice-kelli-ribeiro",
+      "name":"Greice Kelli Ribeiro",
+      "jobTitle":"Advogada",
+      "description":"Advogada especialista em Direito do Trabalho e Direito Previdenciário, inscrita na OAB/SP 387.933.",
+      "hasCredential":"OAB/SP 387.933",
+      "image":"https://gkribeiro.adv.br/assets/img/greice-ribeiro-retrato-novo.webp",
+      "url":"https://gkribeiro.adv.br/sobre.html",
+      "worksFor":{"@id":"https://gkribeiro.adv.br/#legalservice"}
+    }
+  ]
+}
+</script>
 </head>
 <body>
+<img src="assets/img/greice-ribeiro-retrato-novo.webp" alt="Dra. Greice Kelli Ribeiro" style="max-width:200px;height:auto;border:1px solid var(--rule);float:right;margin:0 0 16px 24px;">
 <header class="masthead">
   <div class="wrap">
     <div class="masthead-row">
@@ -24,61 +52,26 @@ window.acceptCookies=function(){localStorage.setItem('gk-cookies-accepted','1');
       <nav class="primary-nav"><a href="index.html">Início</a><a href="blog.html">Blog</a><a href="trabalhista.html">Trabalhista</a><a href="previdenciario.html">Previdenciário</a><a href="sobre.html" style="color:var(--accent);">Sobre</a><a href="localizacao.html">Localização</a><a href="contato.html">Contato</a><button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema"><span data-theme-label>🌙</span></button>
         <button class="nav-mobile-toggle" data-nav-toggle aria-label="Abrir menu" style="display:none;">☰ Menu</button></nav>
     </div>
-    <div class="masthead-meta"><span>Dra. Greice Kelli Ribeiro</span><span class="ornament">§</span><span>OAB/SP 387.933</span><span class="ornament">§</span><span>Atendimento presencial e online</span><span class="spacer"></span><span>São Paulo - SP</span></div><div class="progress-line" id="progress-line"></div>
+    <div class="masthead-meta"><span>Dra. Greice Kelli Ribeiro</span><span class="ornament">§</span><span>OAB/SP 387.933</span><span class="ornament">§</span><span>Atendimento presencial e online</span><span class="spacer"></span><span>São Paulo - SP</span></div>
   </div>
+  <div class="progress-line" id="progress-line"></div>
 </header>
-<section class="hero" style="padding:56px 0 72px;">
-  <div class="wrap"><div class="hero-grid">
-    <div class="hero-main">
-      <div class="hero-eyebrow"><span class="hero-label">Sobre</span><span class="hero-marker">GK Ribeiro Advocacia</span></div>
-      <h1 class="hero-title" style="font-size:clamp(28px,4vw,48px);margin-bottom:24px;">Uma atuação voltada à clareza e ao acolhimento</h1>
-      <p class="dropcap" style="margin-bottom:32px;">O trabalho parte de uma escuta cuidadosa da situação apresentada. Antes de indicar uma providência, são considerados documentos, prazos, histórico profissional ou previdenciário, comunicações recebidas e objetivos da pessoa atendida. Essa leitura inicial ajuda a evitar decisões apressadas e permite explicar, com linguagem direta, quais pontos merecem atenção.</p>
-    </div>
-    <aside class="hero-aside">
-      <img src="assets/img/greice-ribeiro-retrato-novo.webp" alt="Dra. Greice Kelli Ribeiro" style="max-width:100%;height:auto;border:1px solid var(--rule);">
-      <div class="aside-foot" style="margin-top:12px;">Dra. Greice Kelli Ribeiro · OAB/SP 387.933</div>
+<main id="main-content">
+<section class="chapter" style="padding-top:56px;">
+  <div class="wrap"><div class="chapter-layout">
+    <aside class="chapter-toc">
+      <div class="toc-section"><div class="toc-label">Nesta página</div><ul class="toc-list"><li><a href="#sobre">Sobre a Dra.</a></li></ul></div>
     </aside>
+    <article class="chapter-body">
+      <h2 id="sobre">Dra. Greice Kelli Ribeiro</h2>
+      <p class="dropcap">Advogada especialista em Direito do Trabalho e Direito Previdenciário, inscrita na OAB/SP sob o n 387.933. Com mais de 10 anos de atuação dedicada, a Dra. Greice Kelli Ribeiro conduz pessoalmente cada caso, oferecendo atendimento humanizado e comunicação clara sobre prazos, documentos e possibilidades.</p>
+      <p>A GK Ribeiro Advocacia nasceu da convicção de que o direito deve ser acessível e compreensível. O escritório atende trabalhadores, empresas e segurados do INSS, tanto presencialmente em São Paulo - SP quanto online para todo o Brasil.</p>
+      <p>Formada em direito, com pós-graduação em Direito do Trabalho.</p>
+      <p>WhatsApp: <a href="https://wa.me/5511957314252">(11) 95731-4252</a></p>
+    </article>
   </div></div>
 </section>
-<section class="chapter">
-  <div class="wrap">
-    <div class="chapter-layout">
-      <aside class="chapter-toc">
-        <div class="toc-section">
-          <div class="toc-label">Nesta página</div>
-          <ul class="toc-list">
-            <li><a href="#trajetoria">Trajetória profissional</a></li>
-            <li><a href="#atuacao">Áreas de atuação</a></li>
-            <li><a href="#atendimento">Atendimento ao cliente</a></li>
-          </ul>
-        </div>
-        <div class="toc-section">
-          <div class="toc-label">Links rápidos</div>
-          <ul class="toc-list">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="trabalhista.html">Trabalhista</a></li>
-            <li><a href="previdenciario.html">Previdenciário</a></li>
-            
-            <li><a href="contato.html">Contato</a></li>
-          </ul>
-        </div>
-      </aside>
-      <article class="chapter-body">
-        <h3 id="trajetoria"><span class="num">§ 1.</span> Trajetória profissional</h3>
-        <p>A GK Ribeiro Advocacia surgiu da dedicação ao Direito do Trabalho e ao Direito Previdenciário, duas áreas que impactam diretamente a vida de trabalhadores, empresas e pessoas em busca de seus direitos junto ao INSS.</p>
-        <p>À frente do escritório está a Dra. Greice Kelli Ribeiro, inscrita na OAB/SP sob o número 387.933. Com mais de 10 anos de experiência jurídica, ela construiu uma trajetória sólida na defesa de direitos trabalhistas e previdenciários.</p>
-        <p>Formada em direito, com pós-graduação em Direito do Trabalho.</p>
-        <h3 id="atuacao"><span class="num">§ 2.</span> Áreas de atuação</h3>
-        <p><strong>Direito Trabalhista:</strong> rescisão, FGTS, horas extras, vínculo, assédio, consultoria preventiva.</p>
-        <p><strong>Direito Previdenciário:</strong> aposentadorias, auxílio-doença, BPC/LOAS, pensão por morte, revisão de benefícios.</p>
-        <h3 id="atendimento"><span class="num">§ 3.</span> Atendimento ao cliente</h3>
-        <p>Atendimento presencial em São Paulo - SP e online, prezando por clareza, respeito e transparência.</p>
-        <p style="font-size:14px;color:var(--ink-3);font-style:italic;margin-top:32px;">Este conteúdo é informativo. Responsável técnica: Dra. Greice Kelli Ribeiro.</p>
-      </article>
-    </div>
-  </div>
-</section>
+</main>
 <footer class="colophon"><div class="wrap"><div class="colophon-grid"><div class="col-block"><h4>GK Ribeiro Advocacia</h4><p><em>Dra. Greice Kelli Ribeiro</em> · OAB/SP 387.933<br>Advocacia Trabalhista e Previdenciária.</p></div><div class="col-block"><h4>Endereços</h4><p><em>Zona Leste:</em> Rua Inácio Monteiro, 2220, Jardim São Paulo<br><em>Centro:</em> Rua Líbero Badaró, 101, 12 andar</p></div><div class="col-block"><h4>Contato</h4><ul><li><a href="tel:+5511957314252">(11) 95731-4252</a></li><li><a href="mailto:atendimento@gkribeiro.adv.br">atendimento@gkribeiro.adv.br</a></li><li><a href="https://www.instagram.com/gkribeiro.adv/" target="_blank" rel="noopener">@gkribeiro.adv</a></li></ul></div></div><div class="colophon-foot"><span>GK Ribeiro Advocacia Trabalhista e Previdenciária</span><span class="colophon-mark">— São Paulo - SP —</span><span>© <span data-year></span> · conteúdo informativo</span></div></div></footer>
 <div id="cookie-bar" style="position:fixed;bottom:0;left:0;right:0;background:var(--bg-2);border-top:1px solid var(--rule);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;z-index:300;font-size:14px;color:var(--ink-2);flex-wrap:wrap;"><span>Este site usa cookies para analises de visita (Google Analytics). Ao continuar, voce concorda com nossa <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">politica de cookies</a>.</span><button id="cookie-accept" style="background:var(--accent);color:var(--bg);border:none;padding:8px 20px;cursor:pointer;font-size:13px;font-weight:500;white-space:nowrap;">Aceitar</button></div>
 <script>if(localStorage.getItem("gk-cookies-accepted")==="1"){document.getElementById("cookie-bar").style.display="none";}
@@ -89,8 +82,8 @@ var cookieAccept=document.getElementById('cookie-accept');if(cookieAccept){cooki
 toggle.addEventListener('click',()=>{const cur=root.getAttribute('data-theme');const next=cur==='dim'?'light':'dim';root.setAttribute('data-theme',next);label.textContent=next==='dim'?'☀':'🌙';localStorage.setItem('gk-theme',next);});}
 const progressLine=document.getElementById('progress-line');if(progressLine){function updateProgress(){const scrollTop=window.scrollY;const docHeight=document.documentElement.scrollHeight-window.innerHeight;progressLine.style.width=(docHeight>0?Math.min(1,scrollTop/docHeight)*100:0)+'%';}
 window.addEventListener('scroll',updateProgress,{passive:true});updateProgress();}
-document.querySelectorAll('[data-year]').forEach(el=>{el.textContent=new Date().getFullYear();});})();
-
-var navToggle=document.querySelector('[data-nav-toggle]');if(navToggle){navToggle.addEventListener('click',function(){var nav=this.closest('.primary-nav');nav.classList.toggle('open');this.textContent=nav.classList.contains('open')?'\u2715 Fechar':'\u2630 Menu';});}</script>
+document.querySelectorAll('[data-year]').forEach(el=>{el.textContent=new Date().getFullYear();});
+var cookieAccept=document.getElementById('cookie-accept');if(cookieAccept){cookieAccept.addEventListener('click',window.acceptCookies);}
+})();</script>
 </body>
 </html>
