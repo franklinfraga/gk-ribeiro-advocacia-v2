@@ -279,6 +279,14 @@ Todo artigo de blog deve incluir o bloco de compartilhamento ao final do artigo 
 | `--logo-primary` | `#083f43` | `#7ab8bd` |
 | `--logo-secondary` | `#b9a06a` | `#d4b878` |
 
+### Regras para o componente de compartilhamento (share.js)
+
+1. **NUNCA** usar `onclick` inline no botão de compartilhar — o JS é carregado externo via `<script src="PREFIXOassets/js/share.js?v=DATA"></script>`
+2. **SEMPRE** incluir `<script src="PREFIXOassets/js/share.js?v=DATA"></script>` antes de `</body>` em todo artigo de blog
+3. O `share.js` usa `DOMContentLoaded` — se carregado após o DOM, dispara manualmente o evento
+4. O `share.js` detecta `window.location.href` e `document.title` automaticamente
+5. **SEMPRE** versionar `share.js?v=DATA` ao modificá-lo
+
 ### Regras da página blog.html
 
 Ao criar um novo artigo de blog, SEMPRE atualizar `blog.html`:
