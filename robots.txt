@@ -18,6 +18,6 @@ User-agent: PerplexityBot
 Allow: /
 
 User-agent: CCBot
-Disallow: /
+Allow: /
 
 Sitemap: https://gkribeiro.adv.br/sitemap.xml
