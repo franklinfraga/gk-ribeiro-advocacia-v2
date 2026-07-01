@@ -4,26 +4,25 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!shareBtn) return;
   var shareMenu = document.getElementById('share-menu');
   var shareMsg = document.getElementById('share-msg');
+  var pageTitle = document.title || document.querySelector('h1')?.textContent || 'Compartilhar';
+  var pageUrl = window.location.href;
   shareBtn.addEventListener('click', function () {
     if (navigator.share) {
-      navigator.share({
-        title: 'Como Iniciar sua Acao Trabalhista no TRT-2',
-        url: 'https://gkribeiro.adv.br/blog/acao-trabalhista-trt2-guia.html'
-      }).catch(function () {});
+      navigator.share({ title: pageTitle, url: pageUrl }).catch(function () {});
     } else {
       shareMenu.style.display = shareMenu.style.display === 'none' ? 'block' : 'none';
     }
   });
-  var copyItem = document.querySelector('.share-item[data-action="copy"]');
+  document.querySelectorAll('[data-share-link]').forEach(function (el) {
+    el.addEventListener('click', function (e) { e.preventDefault(); window.open(this.href, '_blank', 'width=600,height=500'); });
+  });
+  var copyItem = document.querySelector('[data-share="copy"]');
   if (copyItem) {
     copyItem.addEventListener('click', function (e) {
       e.preventDefault();
-      navigator.clipboard.writeText('https://gkribeiro.adv.br/blog/acao-trabalhista-trt2-guia.html').then(function () {
+      navigator.clipboard.writeText(pageUrl).then(function () {
         shareMenu.style.display = 'none';
-        shareMsg.style.display = 'inline';
-        setTimeout(function () {
-          shareMsg.style.display = 'none';
-        }, 2000);
+        if (shareMsg) { shareMsg.style.display = 'inline'; setTimeout(function () { shareMsg.style.display = 'none'; }, 2000); }
       }).catch(function () {});
     });
   }
