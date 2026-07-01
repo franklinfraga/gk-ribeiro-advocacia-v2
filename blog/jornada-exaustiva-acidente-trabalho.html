@@ -194,6 +194,222 @@
               </div>
 
               <div class="share-block" style="margin-top:40px;padding:20px;border:1px solid var(--rule);background:var(--bg-2);position:relative;">
+        <button id="share-btn" style="display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--bg);border:none;padding:8px 20px;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          Compartilhar
+        </button>
+        <span id="share-msg" style="display:none;margin-left:12px;font-size:13px;color:var(--accent);">Link copiado!</span>
+        <div id="share-menu" style="display:none;margin-top:16px;padding:16px;background:var(--bg);border:1px solid var(--rule);">
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px;">
+            <a href="#" data-share="copy" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar link</a>
+            <a href="mailto:?subject=Jornada%20exaustiva%20e%20acidente%20de%20trabalho&body=https://gkribeiro.adv.br/blog/jornada-exaustiva-acidente-trabalho.html" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Email</a>
+            <a href="https://wa.me/?text=Jornada%20exaustiva%20e%20acidente%20de%20trabalho%20https%3A%2F%2Fgkribeiro.adv.br%2Fblog%2Fjornada-exaustiva-acidente-trabalho.html" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3.2A12.72 12.72 0 0 0 5.15 22.5L3.4 28.8l6.45-1.69A12.72 12.72 0 1 0 16.04 3.2Zm0 2.3a10.43 10.43 0 0 1 8.89 15.9 10.42 10.42 0 0 1-13.94 3.55l-.46-.27-3.83 1 1.03-3.72-.3-.49a10.42 10.42 0 0 1 8.61-15.97Z"/></svg> WhatsApp</a>
+            <a href="https://telegram.me/share/url?url=https://gkribeiro.adv.br/blog/jornada-exaustiva-acidente-trabalho.html&text=Jornada%20exaustiva%20e%20acidente%20de%20trabalho" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg> Telegram</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://gkribeiro.adv.br/blog/jornada-exaustiva-acidente-trabalho.html" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://gkribeiro.adv.br/blog/jornada-exaustiva-acidente-trabalho.html&title=Jornada%20exaustiva%20e%20acidente%20de%20trabalho" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg> Instagram</a>
+            <a href="https://www.threads.net/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.14 10.56c-.68-.34-1.16-.78-1.16-1.55 0-.66.28-1.14.76-1.48.5-.37 1.16-.5 1.84-.46.89.06 1.57.35 2.09.78.52.43.8.95.8.95l1.72-1.12s-.58-1.07-1.6-1.72c-.79-.5-1.81-.83-3.06-.88-1.26-.05-2.4.16-3.37.62-.74.36-1.36.87-1.8 1.52-.5.75-.72 1.63-.7 2.58.02.95.22 1.74.67 2.44.94 1.47 2.37 2.07 3.67 2.64.98.39 1.87.72 2.48 1.13.43.3.62.62.62 1.05 0 .43-.19.82-.57 1.14-.47.39-1.28.62-2.35.57-1.56-.06-2.6-.72-3.19-1.49-.37-.49-.6-1.02-.7-1.57l-2.34.3c.12.91.46 1.74 1 2.44.82 1.08 2.08 1.88 3.83 2.19.79.14 1.6.16 2.38.04 1.09-.17 2.07-.55 2.87-1.12.66-.47 1.18-1.06 1.52-1.74.34-.68.52-1.43.5-2.21-.02-.63-.18-1.21-.48-1.72-.42-.72-1.05-1.25-1.78-1.64-.7-.37-1.51-.66-2.22-.97-.67-.28-1.2-.56-1.54-.88-.28-.27-.4-.57-.4-.95 0-.38.14-.71.42-.96.32-.27.76-.4 1.26-.4.48 0 1.03.12 1.5.4.54.33.86.81 1.02 1.39l2.3-.23c-.2-1.34-.84-2.29-1.83-2.97-.81-.55-1.85-.87-3.04-.95-1.35-.09-2.58.17-3.66.69-.87.43-1.6 1.02-2.16 1.77-.5.66-.82 1.37-.97 2.14-.12.59-.15 1.17-.1 1.72.06.9.32 1.68.76 2.37.82 1.29 2.08 1.9 3.46 2.44.97.33 1.83.66 2.4 1.03.34.23.53.48.53.85 0 .33-.14.62-.43.85-.34.27-.8.42-1.36.42-.58 0-1.05-.14-1.38-.32-.52-.3-.88-.76-1.1-1.4l-2.29.53c.4 1.27 1.1 2.24 2.1 2.94.8.57 1.78.94 2.91 1.08.84.1 1.7.07 2.52-.12 1.1-.25 2.06-.72 2.85-1.37.76-.63 1.29-1.4 1.6-2.3.27-.77.38-1.58.34-2.4-.04-.72-.21-1.4-.5-2.01-.38-.82-.98-1.5-1.78-2.01z"/></svg> Threads</a>
+            <a href="https://www.reddit.com/submit?url=https://gkribeiro.adv.br/blog/jornada-exaustiva-acidente-trabalho.html&title=Jornada%20exaustiva%20e%20acidente%20de%20trabalho" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:6px;font-size:12px;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-soft);border-radius:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.77 8.23c.89 0 1.62.73 1.62 1.62 0 .62-.35 1.16-.86 1.41.07.33.11.66.11 1 0 3.29-3.3 5.97-7.37 5.97S4.36 15.55 4.36 12.26c0-.34.04-.67.11-1-.5-.25-.86-.79-.86-1.41 0-.89.73-1.62 1.62-1.62.47 0 .89.2 1.19.52 1.15-.84 2.67-1.37 4.33-1.42l.92-3.89c.02-.09.1-.15.19-.16l3.08-.34c.17.36.53.62.96.62.58 0 1.05-.47 1.05-1.05 0-.58-.47-1.05-1.05-1.05-.43 0-.8.26-.96.62l-3.08.34a.2.2 0 0 0-.15.1l-.92 3.89c-1.66.05-3.17.58-4.33 1.42a1.67 1.67 0 0 0-1.19-.52c-.89 0-1.62.73-1.62 1.62 0 .62.35 1.16.85 1.41-.07.33-.11.66-.11 1 0 3.29 3.3 5.97 7.37 5.97s7.37-2.68 7.37-5.97c0-.34-.04-.67-.11-1 .5-.25.86-.79.86-1.41z"/></svg> Reddit</a>
+          </div>
+        </div>
+      </div>
+      
+      ype html>
+<html lang="pt-BR">
+  <head>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="stylesheet" href="../assets/css/fonts.css?v=20260623-2">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jornada exaustiva e acidente de trabalho | GK Ribeiro</title>
+    <meta name="description" content="Jornada exaustiva pode ser considerada causa de acidente de trabalho. Entenda os critérios analisados e quais documentos são importantes.">
+    <link rel="canonical" href="https://gkribeiro.adv.br/blog/jornada-exaustiva-acidente-trabalho.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Jornada exaustiva e acidente de trabalho">
+    <meta property="og:description" content="Jornada exaustiva pode ser considerada causa de acidente de trabalho. Entenda os critérios analisados e quais documentos são importantes.">
+    <meta property="og:url" content="https://gkribeiro.adv.br/blog/jornada-exaustiva-acidente-trabalho.html">
+    <meta property="og:image" content="https://gkribeiro.adv.br/assets/img/gk-ribeiro-og.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jornada exaustiva pode causar acidente de trabalho? | GK Ribeiro">
+    <meta name="twitter:description" content="Jornada exaustiva pode ser considerada causa de acidente de trabalho. Entenda os critérios analisados e quais documentos podem ajudar.">
+    <meta name="twitter:image" content="https://gkribeiro.adv.br/assets/img/gk-ribeiro-og.webp">
+    <meta name="theme-color" content="#083f43">
+    <link rel="icon" href="../assets/logo/logo-gk-simples.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/logo/apple-touch-icon.png">
+    <link rel="stylesheet" href="../assets/css/forge.css?v=20260626-3">
+    
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@graph": [
+            {
+                  "@type": "Article",
+                  "headline": "Jornada exaustiva pode causar acidente de trabalho? Entenda",
+                  "description": "Jornada exaustiva pode ser considerada causa de acidente de trabalho. Entenda os critérios analisados e quais documentos são importantes.",
+                  "datePublished": "2026-06-20",
+                  "dateModified": "2026-06-20",
+                  "author": {
+                        "@type": "Person",
+                        "name": "Greice Kelli Ribeiro",
+                        "jobTitle": "Advogada",
+                        "identifier": "OAB/SP 387.933",
+                        "telephone": "+55 11 95731-4252",
+                        "email": "atendimento@gkribeiro.adv.br",
+                        "image": "https://gkribeiro.adv.br/assets/img/greice-ribeiro-retrato-novo.webp",
+                        "address": {
+                              "@type": "PostalAddress",
+                              "streetAddress": "Rua Inácio Monteiro, 2220, Jardim São Paulo",
+                              "addressLocality": "São Paulo",
+                              "addressRegion": "SP",
+                              "postalCode": "08490-000",
+                              "addressCountry": "BR"
+                        }
+                  },
+                  "publisher": {
+                        "@type": "Organization",
+                        "name": "GK Ribeiro Advocacia Trabalhista e Previdenciária",
+                        "url": "https://gkribeiro.adv.br/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://gkribeiro.adv.br/assets/logo/logo-gk-completa.svg"
+                        }
+                  },
+                  "mainEntityOfPage": "https://gkribeiro.adv.br/blog/jornada-exaustiva-acidente-trabalho.html",
+                  "image": "https://gkribeiro.adv.br/assets/img/gk-ribeiro-og.webp"
+            },
+            {
+                  "@type": "FAQPage",
+                  "mainEntity": [
+                        {
+                              "@type": "Question",
+                              "name": "Jornada exaustiva sempre gera direito a estabilidade acidentária?",
+                              "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Não. A estabilidade de 12 meses exige afastamento por mais de 15 dias, CAT, afastamento pelo INSS e nexo entre o trabalho e o acidente ou doença ocupacional. Cada caso depende de perícia e análise de provas."
+                              }
+                        },
+                        {
+                              "@type": "Question",
+                              "name": "O que fazer depois de um acidente de trabalho?",
+                              "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Buscar atendimento médico, comunicar a empresa, solicitar abertura de CAT, guardar documentos médicos e registrar a rotina de trabalho. Orientação jurídica pode ajudar a entender os próximos passos."
+                              }
+                        },
+                        {
+                              "@type": "Question",
+                              "name": "Doença causada pelo trabalho também dá direito à estabilidade?",
+                              "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Sim, a Súmula 378 do TST reconhece que doenças ocupacionais equiparam-se a acidente de trabalho, podendo gerar estabilidade provisória de 12 meses, desde que cumpridos os requisitos legais."
+                              }
+                        }
+                  ]
+            }
+      ]
+}
+    </script>
+  </head>
+  <body>
+<header class="masthead">
+  <div class="wrap">
+    <div class="masthead-row">
+      <div class="brand"><a href="../index.html" aria-label="GK Ribeiro Advocacia Trabalhista e Previdenciária"><svg width="135" height="105" viewBox="0 0 195 152" role="img" style="display:block;height:105px;width:auto;"><title>GK Ribeiro</title><desc>Simbolo GK</desc><path fill="var(--logo-primary)" stroke="var(--logo-stroke)" stroke-width="14" stroke-linejoin="round" paint-order="stroke fill" transform="scale(0.169271 0.169271)" d="M564.197 221.82C565.194 223.228 564.779 345.443 564.758 354.306C546.583 354.164 528.407 354.163 510.232 354.302L510.182 290.851C483.751 297.629 450.325 307.897 424.146 313.079C424.969 345.338 423.624 379.104 424.215 411.487C424.483 426.142 423.366 444.906 425.257 459.048C430.516 498.374 450.009 533.559 477.551 561.734C488.216 572.644 498.238 580.379 510.205 589.537L510.212 453.563C494.514 453.146 475.516 453.725 459.69 453.84L459.708 400.873C472.221 400.372 486.286 400.657 498.958 400.656L564.753 400.553C564.902 410.634 564.787 421.021 564.798 431.126L564.803 682.866C520.868 665.545 472.66 634.351 439.446 600.991C401.632 563.011 375.028 514.131 370.154 460.202C369.303 450.788 369.55 440.945 369.559 431.5L369.607 390.737L369.584 272.036C410.37 262.095 451.199 250.652 491.933 240.351C515.753 234.327 540.209 226.901 564.197 221.82Z"/><path fill="var(--logo-secondary)" stroke="var(--logo-stroke)" stroke-width="14" stroke-linejoin="round" paint-order="stroke fill" transform="scale(0.169271 0.169271)" d="M594.384 222.513C610.557 225.254 632.945 231.824 649.488 236.005C649.873 254.369 649.574 273.718 649.579 292.141L649.63 396.086C677.662 378.577 705.431 360.168 733.41 342.833C732.575 315.893 733.275 285.217 733.293 258.006C750.353 261.73 771.76 267.292 788.626 272.172C788.953 304.927 788.685 338.312 788.609 371.101C770.704 382.878 751.812 393.514 733.977 405.218C735.931 406.56 738.041 408.475 739.842 410.062C756.129 424.407 773.334 438.113 789.31 452.779C789.184 461.986 786.533 478.668 784.337 487.579C766.318 560.679 715.306 614.678 652.794 653.119C634.13 664.479 614.635 674.413 594.474 682.835C594.205 662.556 594.188 642.275 594.423 621.996C602.188 617.201 613.125 612.819 621.574 607.619C676.088 574.071 715.573 535.555 730.864 472.135L685.955 435.673C673.867 443.535 661.701 451.277 649.459 458.897C649.926 469.137 649.519 482.857 649.517 493.319L649.507 560.237C636.252 573.286 611.07 587.941 594.506 596.182C594.878 561.307 594.311 525.184 594.329 490.16L594.384 222.513Z"/></svg></a></div>
+      <nav class="primary-nav"><a href="../index.html">Início</a><a href="../blog.html" style="color:var(--accent);">Blog</a><a href="../trabalhista.html">Trabalhista</a><a href="../previdenciario.html">Previdenciário</a><a href="../sobre.html">Sobre</a><a href="../localizacao.html">Localização</a><a href="../contato.html">Contato</a><button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema"><span data-theme-label>🌙</span></button><button class="nav-mobile-toggle" data-nav-toggle aria-label="Abrir menu" style="display:none;">☰ Menu</button></nav>
+    </div>
+    <div class="masthead-meta"><span>Dra. Greice Kelli Ribeiro</span><span class="ornament">s</span><span>OAB/SP 387.933</span><span class="ornament">s</span><span>Atendimento presencial e online</span><span class="spacer"></span><span>Sao Paulo - SP</span></div><div class="progress-line" id="progress-line"></div>
+  </div>
+</header>
+<img src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" alt="" style="display:none;" /><main id="conteudo">
+      <article>
+        <section class="page-hero">
+          <div class="container">
+            <nav class="breadcrumb" aria-label="Caminho">
+              <a href="../index.html">Início</a>
+              <span>/</span>
+              <a href="../blog.html">Blog</a>
+              <span>/</span>
+              <span>Jornada exaustiva e acidente de trabalho</span>
+            </nav>
+            <span class="eyebrow">Direito Trabalhista</span>
+            <h1>Jornada exaustiva pode causar acidente de trabalho? Entenda</h1>
+            <p>A relação entre jornada prolongada e acidente de trabalho pode ser analisada em alguns casos. Entenda os critérios e quais documentos podem ser importantes.</p>
+            <div class="article-meta">
+              <span>Publicado em 20/06/2026</span>
+              <span>Leitura informativa</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container content-grid">
+            <div class="article-body">
+              <p class="lead">Trabalhadores da Zona Leste de São Paulo, incluindo bairros como São Miguel Paulista e Itaquera, enfrentam longos deslocamentos e jornadas extensas. Em alguns casos, a rotina exaustiva pode estar relacionada a acidentes de trabalho ou doenças ocupacionais.</p>
+
+              <h2>Base jurídica: o que diz a lei</h2>
+              <p>A Consolidação das Leis do Trabalho (CLT) estabelece regras sobre jornada de trabalho:</p>
+              <ul>
+                <li><strong>Art. 58:</strong> jornada de trabalho normal é de até 8 horas diárias.</li>
+                <li><strong>Art. 59:</strong> horas extras podem ser feitas, mas com limite e pagamento adicional.</li>
+                <li><strong>Art. 71:</strong> intervalo intrajornada é obrigatório para jornadas acima de 6 horas.</li>
+                <li><strong>Art. 74:</strong> empregadores com mais de 20 funcionários devem manter controle de ponto.</li>
+              </ul>
+              <p>A <strong>Súmula 378 do TST</strong> trata da estabilidade provisória do acidentado. Ela estabelece que o empregado afastado do trabalho por acidente de trabalho (ou doença a ele equiparada) tem direito à estabilidade de 12 meses após o retorno, desde que tenha recebido auxílio-doença acidentário e cumprido os requisitos legais.</p>
+              <p>A <strong>Lei 8.213/91</strong> (art. 19 a 23) define o que é considerado acidente de trabalho e doença ocupacional para fins previdenciários.</p>
+              <p class="note"><strong>Fontes:</strong> CLT, arts. 58, 59, 71, 74; Súmula 378 do TST; Lei 8.213/91, arts. 19-23. Acesso em 20/06/2026.</p>
+
+              <h2>Exemplo fictício para fins informativos</h2>
+              <p><strong>Exemplo fictício para fins informativos:</strong> Carlos, 34 anos, morador de São Miguel Paulista, trabalhava em um centro de distribuição na Zona Leste. Ele fazia 2 horas extras por dia regularmente, tinha apenas 30 minutos de almoço e enfrentava 3 horas de deslocamento entre ida e volta do trabalho. Após meses de rotina exaustiva, sofreu uma lesão por esforço repetitivo diagnosticada como doença ocupacional.</p>
+              <p>Em uma situação assim, a análise costuma observar a jornada real, os controles de ponto, os registros médicos, a CAT (Comunicação de Acidente de Trabalho) e o nexo entre a rotina de trabalho e o problema de saúde.</p>
+
+              <h2>Como o tema é analisado</h2>
+              <p>A relação entre jornada exaustiva e acidente de trabalho não é automática. Geralmente, são considerados:</p>
+              <ul>
+                <li>Se houve afastamento por mais de 15 dias (para estabilidade acidentária).</li>
+                <li>Se a CAT foi emitida pela empresa ou registrada no sindicato ou INSS.</li>
+                <li>Se o INSS reconheceu o afastamento como acidentário (código B91 ou auxílio-doença acidentário).</li>
+                <li>Se existe nexo entre a rotina de trabalho e o acidente ou doença, comprovado por perícia médica.</li>
+                <li>Se a empresa descumpria regras de jornada, pausas ou condições de segurança.</li>
+              </ul>
+
+              <h2>Documentos que ajudam na análise</h2>
+              <ul>
+                <li>CAT (Comunicação de Acidente de Trabalho), se emitida.</li>
+                <li>Atestados, relatórios médicos, exames e receitas.</li>
+                <li>Holerites que comprovem horas extras habituais.</li>
+                <li>Controles de ponto, escalas e registros de jornada.</li>
+                <li>Comprovantes de deslocamento (transporte público, vale-transporte).</li>
+                <li>Comunicações com a empresa sobre afastamentos ou mudanças de função.</li>
+              </ul>
+
+              <h2>Quando procurar orientação</h2>
+              <ul>
+                <li>Se você sofreu acidente de trabalho ou foi diagnosticado com doença ocupacional.</li>
+                <li>Se a empresa não abriu CAT ou se recusou a registrar o acidente.</li>
+                <li>Se o INSS negou o benefício acidentário.</li>
+                <li>Se você foi demitido durante o período de estabilidade acidentária.</li>
+                <li>Se há dúvida sobre o direito à estabilidade ou sobre verbas rescisórias.</li>
+              </ul>
+
+              <div class="faq">
+                <details>
+                  <summary>Jornada exaustiva sempre gera direito a estabilidade acidentária?</summary>
+                  <p>Não. A estabilidade de 12 meses exige afastamento por mais de 15 dias, CAT, afastamento pelo INSS e nexo entre o trabalho e o acidente ou doença ocupacional. Cada caso depende de perícia e análise de provas.</p>
+                </details>
+                <details>
+                  <summary>O que fazer depois de um acidente de trabalho?</summary>
+                  <p>Buscar atendimento médico, comunicar a empresa, solicitar abertura de CAT, guardar documentos médicos e registrar a rotina de trabalho. Orientação jurídica pode ajudar a entender os próximos passos.</p>
+                </details>
+                <details>
+                  <summary>Doença causada pelo trabalho também dá direito à estabilidade?</summary>
+                  <p>Sim, a Súmula 378 do TST reconhece que doenças ocupacionais equiparam-se a acidente de trabalho, podendo gerar estabilidade provisória de 12 meses, desde que cumpridos os requisitos legais.</p>
+                </details>
+              </div>
+
+              <div class="share-block" style="margin-top:40px;padding:20px;border:1px solid var(--rule);background:var(--bg-2);position:relative;">
   <button id="share-btn" style="display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--bg);border:none;padding:8px 20px;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
     Compartilhar
