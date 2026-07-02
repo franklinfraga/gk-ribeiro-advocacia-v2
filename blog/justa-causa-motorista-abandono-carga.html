@@ -236,6 +236,7 @@ var cookieAccept=document.getElementById("cookie-accept");if(cookieAccept){cooki
     q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); q.click(); } });
   });
   document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
+  var navToggle=document.querySelector('[data-nav-toggle]');if(navToggle){navToggle.addEventListener('click',function(){var nav=this.closest('.primary-nav');nav.classList.toggle('open');this.textContent=nav.classList.contains('open')?'\u2715 Fechar':'\u2630 Menu';});}
   var cookieAccept=document.getElementById('cookie-accept');if(cookieAccept){cookieAccept.addEventListener('click',window.acceptCookies);}
 })();
 </script>
